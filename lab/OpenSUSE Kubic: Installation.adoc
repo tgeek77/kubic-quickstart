@@ -1,0 +1,9 @@
+= OpenSUSE Kubic: Installation
+Jason Evans <jsevans@opensuse.org>
+v1.0, 2019-04-10
+:toc:
+
+<<<
+== Setup Clone Master
+include::labs/asciidoc/EXERCISE-Setup_Clone_Master-v01.adoc[]
+<<<
