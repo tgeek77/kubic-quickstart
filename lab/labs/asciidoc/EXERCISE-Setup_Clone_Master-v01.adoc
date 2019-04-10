@@ -1,12 +1,18 @@
-= Setup Clone Master
-Jason Evans <jsevans@opensuse.org>
-
-.Description:
+[cols="",]
+|=======================================================================
+a|
+Description:
+In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.
 [NOTE]
 =======================================================================
-In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.
-Note: This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.
+This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.
 =======================================================================
+|=======================================================================
+
+
+
+
+
 
 ==== Task 1: Download the installation media
 
