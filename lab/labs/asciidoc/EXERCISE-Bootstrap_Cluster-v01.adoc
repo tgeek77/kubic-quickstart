@@ -26,6 +26,7 @@ node as root:
 +
  kubeadm join 10.0.2.11:6443 --token …
 +
+[IMPORTANT]
 Save this command. You will need it later!
 
 ==== Task 2: (optional) Add a second network interface to Kubic-Master VM
