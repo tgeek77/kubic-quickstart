@@ -96,51 +96,71 @@ Note: This tutorial was written using Virtualbox 6.0. It contains step by step i
 . Click Install
 
 ==== Task 5: Post-Installation setup
-    1. After the installation has finished, the VM will reboot. Choose Boot from Hard Disk
-    2. Choose the first option: openSUSE Tumbleweed Kubic
-    3. Log into the command line:
-       Userid: root
-       Password: [your root password]
-    4. Eject the installation media:
-       eject /dev/sr0
-    5. Install Yast for easier network configuration:
-       transactional-update pkg install yast2-network
-    6. Reboot your vm:
-       reboot
-    7. Repeat steps 1-3 in this task:
-    8. Start the curses version of yast to configure networking
-       yast2 lan
-    9. Use the F4 key on your keyboard to edit:
-       You can use the tab key to navigate the screen
-    10. Click alt t on your keyboard to change to Statically Assigned IP Address
-    11. In the IP Address field, enter:
+. After the installation has finished, the VM will reboot. Choose Boot from Hard Disk
+. Choose the first option: openSUSE Tumbleweed Kubic
+. Log into the command line:
+
+ Userid: root
+ Password: [your root password]
+
+. Eject the installation media:
+
+ eject /dev/sr0
+
+. Install Yast for easier network configuration:
+
+ transactional-update pkg install yast2-network
+
+. Reboot your vm:
+
+ reboot
+
+. Repeat steps 1-3 in this task:
+. Start the curses version of yast to configure networking
+
+ yast2 lan
+
+. Use the F4 key on your keyboard to edit:
+
+ You can use the tab key to navigate the screen
+
+. Click alt t on your keyboard to change to Statically Assigned IP Address
+. In the IP Address field, enter:
 
  10.0.2.10
  Use the tab key to go to the next field
 
-   12. In the Subnet Mask field, enter:
-       /24
-    13. Use the F10 key to go to the next screen
-    14. Click alt s on your keyboard to change the Hostname/DNS
-    15. In the hostname field, enter: clone-master
-       Use the tab key to go to the Name Server 1 field
-    16. Enter the generic Google DNS or substitute another if you prefer:
-       8.8.8.8
-    17. Click alt u on your keyboard to change the Routing
-    18. In the Default IPv4 Gateway field, enter:
-       10.0.2.2
-    19. Select click alt i on your keyboard to select Enable IPv4 Forwarding
-    20. Use the F10 key to finish.
-    21. Ping the gateway. If you get a positive response, then you have set up the network correctly:
+. In the Subnet Mask field, enter:
 
-       ping 10.0.2.2
+ /24
 
-    22. Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
+. Use the F10 key to go to the next screen
+. Click alt s on your keyboard to change the Hostname/DNS
+. In the hostname field, enter: clone-master
 
-       ping opensuse.org
+ Use the tab key to go to the Name Server 1 field
 
-    23.  If either step 19 or 20 gives an error, review the steps in this task.
-    24. Shut down the VM:
+. Enter the generic Google DNS or substitute another if you prefer:
+
+ 8.8.8.8
+
+. Click alt u on your keyboard to change the Routing
+. In the Default IPv4 Gateway field, enter:
+
+ 10.0.2.2
+
+. Select click alt i on your keyboard to select Enable IPv4 Forwarding
+. Use the F10 key to finish.
+. Ping the gateway. If you get a positive response, then you have set up the network correctly:
+
+ ping 10.0.2.2
+
+. Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
+
+ ping opensuse.org
+
+.  If either step 19 or 20 gives an error, review the steps in this task.
+. Shut down the VM:
 
  halt -p
 
