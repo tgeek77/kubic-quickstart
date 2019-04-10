@@ -11,9 +11,9 @@ In this section you will bootstrap your Kubic Kubernetes cluster
 
 . Login into the *Kubic-Master* VM if you have not already done so:
 +
-Userid: *root*
+[gray]*Userid*: *root*
 +
-Password: *[your root password]*
+[gray]*Password*: *[your root password]*
 . Run the following command to configure this as a Kubernetes master
 node:
 +
