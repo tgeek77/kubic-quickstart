@@ -1,8 +1,3 @@
-[cols=",",]
-|====
-|- |
-|====
-
 [cols="",]
 |=======================================================================
 a|
@@ -13,59 +8,55 @@ Worker VMs to be unique.
 
 |=======================================================================
 
-[[task-1-configure-the-kubic-master-vm]]
-Task 1: Configure the Kubic-Master VM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Task 1: Configure the Kubic-Master VM
 
-1.  From the main Virtualbox screen, choose the *Kubic-Master* VM and
+. From the main Virtualbox screen, choose the *Kubic-Master* VM and
 click on the down arrow next to the start icon. Click on Detachable
 Start
-2.  Log into the command line:
+. Log into the command line:
 +
 Userid: *root*
 +
 Password: *[your root password]*
-3.  Start the curses version of yast to configure networking
+. Start the curses version of yast to configure networking
 +
-yast2 lan
-4.  Use the *F4* key on your keyboard to edit
-5.  Use the *tab* key to navigate around the screen
-6.  Change the IP address to *10.0.2.11*
-7.  Change the Hostname to *kubic-master*
-8.  Use the *F10* key to go the next screen
-9.  User the **alt s **keys to go to the Hostname/DNS screen
-10. Change the Hostname to *kubic-master*
-11. Use the *F10* key to finish:
+ yast2 lan
 
-[[task-2-configure-the-kubic-worker1-vm]]
-Task 2: Configure the Kubic-Worker1 VM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+. Use the *F4* key on your keyboard to edit
+. Use the *tab* key to navigate around the screen
+. Change the IP address to *10.0.2.11*
+. Change the Hostname to *kubic-master*
+. Use the *F10* key to go the next screen
+. User the **alt s **keys to go to the Hostname/DNS screen
+. Change the Hostname to *kubic-master*
+. Use the *F10* key to finish:
 
-1.  From the main Virtualbox screen, choose the *Kubic-Worker1* VM and
+==== Task 2: Configure the Kubic-Worker1 VM
+
+. From the main Virtualbox screen, choose the *Kubic-Worker1* VM and
 click on the down arrow next to the start icon. Click on Detachable
 Start
-2.  Log into the command line:
+. Log into the command line:
 +
 Userid: *root*
 +
 Password: *[your root password]*
-3.  Start the curses version of yast to configure networking
+. Start the curses version of yast to configure networking
 +
-yast2 lan
-4.  Use the *F4* key on your keyboard to edit
-5.  Use the *tab* key to navigate around the screen
-6.  Change the IP address to *10.0.2.12*
-7.  Change the Hostname to *kubic-worker1*
-8.  Use the *F10* key to go the next screen
-9.  User the **alt s **keys to go to the Hostname/DNS screen
-10. Change the Hostname to *kubic-worker1*
-11. Use the *F10* key to finish
-+
+ yast2 lan
+
+. Use the *F4* key on your keyboard to edit
+. Use the *tab* key to navigate around the screen
+. Change the IP address to *10.0.2.12*
+. Change the Hostname to *kubic-worker1*
+. Use the *F10* key to go the next screen
+. User the **alt s **keys to go to the Hostname/DNS screen
+. Change the Hostname to *kubic-worker1*
+. Use the *F10* key to finish
 +
 Repeat Task 2 for each worker node. Add 1 to the IP address and hostname
 for each node that you configure using the pattern in this section.
 +
- +
 All nodes should be able to ping 10.0.2.2, each other, and an internet
 website.
 
@@ -78,5 +69,3 @@ In this section you changed the IP addresses on each node to be unique
 so they are ready to create a Kubernetes cluster
 
 |=======================================================================
-
-(End of Exercise)
