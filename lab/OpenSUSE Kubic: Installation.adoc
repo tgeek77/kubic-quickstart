@@ -4,6 +4,18 @@ v1.0, 2019-04-10
 :toc:
 
 <<<
-== Setup Clone Master
+== Setup the Clone Master
 include::labs/asciidoc/EXERCISE-Setup_Clone_Master-v01.adoc[]
+<<<
+
+== Clone the VMs
+include::labs/asciidoc/EXERCISE-Clone_VMs-v01.adoc[]
+<<<
+
+== Configure the Master and Worker VMs
+include::labs/asciidoc/EXERCISE-Configure_Master_and_Worker_VMs-v01.adoc[]
+<<<
+
+== Bootstrap the Cluster
+include::labs/asciidoc/EXERCISE-Bootstrap_Cluster-v01.adoc[]
 <<<

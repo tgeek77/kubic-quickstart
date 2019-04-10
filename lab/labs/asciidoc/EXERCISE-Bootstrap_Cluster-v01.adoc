@@ -1,0 +1,143 @@
+[cols=",",]
+|====
+|- |
+|====
+
+[cols="",]
+|===============================================================
+a|
+Description:
+
+In this section you will bootstrap your Kubic Kubernetes cluster
+
+|===============================================================
+
+[[task-1-set-up-kubic-master]]
+Task 1: Set up Kubic-Master
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Login into the *Kubic-Master* VM if you have not already done so:
++
+Userid: *root*
++
+Password: *[your root password]*
+2.  Run the following command to configure this as a Kubernetes master
+node:
++
+kubeadm init --cri-socket=/var/run/crio/crio.sock \ +
+--pod-network-cidr=10.244.0.0/16
++
+You should see some output and at the end, you will see this:
++
+You can now join any number of machines by running the following on each
+node as root:
++
+kubeadm join 10.0.2.11:6443 --token …
++
+Save this command. You will need it later!
+
+[[task-2-optional-add-a-second-network-interface-to-kubic-master-vm]]
+Task 2: (optional) Add a second network interface to Kubic-Master VM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Power off the Kubic-Master VM
++
+halt -p
+2.  From the main Virtualbox screen, choose the *Kubic-Master VM* and
+click on Settings
+3.  Click on the Network icon
+4.  Click on the Adaptor 2 tab
++
+Change Attached to to Bridged Adaptor
++
+Name should automatically change to whatever physical network adaptor
+you are using.
+5.  From the main Virtualbox screen, choose the *Kubic-Master* VM and
+click on the down arrow next to the start icon. Click on Detachable
+Start
+6.  Log into the command line:
++
+Userid: *root*
++
+Password: *[your root password]*
+7.  Start the curses version of yast to configure networking on the new
+nic
++
+yast2 lan
+8.  Use the *F4* key on your keyboard to edit the new nic
+9.  Click on *alt y* on your keyboard to change this nic to DHCP. If
+your network does not have DHCP, set a static IP instead.
+10. Click on *F10* on your keyboard to exit this screen
+11. Click on *F10* on your keyboard to exit yast
+12. Find your new IP addresses
++
+ip a
++
+You should now be able to log into the Kubic-Master using the terminal
+or application of your choice. You can also now copy and paste from this
+book.
+
+[[task-3-set-up-the-kubic-workers]]
+Task 3: Set up the Kubic-Workers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Login to the Kubic-Worker1 VM if you have not already done so:
++
+Userid: *root*
++
+Password: *[your root password]*
+2.  Run the output command from Task 1 and add
++
+--cri-socket=/var/run/crio/crio.sock
++
+ +
+to the end of the command +
+3.  Repeat this task for every worker VM
+
+[[task-4-set-up-the-kubectl]]
+Task 4: Set up the kubectl
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  On the *Kubic-Master* VM, copy and set up the config file so that
+kubectl can interact with the cluster:
++
+mkdir -p $HOME/.kube
++
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
++
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+2.  Check on your nodes
++
+kubectl get nodes
++
+You should have 3 nodes. All of them should be in a NotReady status
+
+[[task-5-set-up-flannel]]
+Task 5: Set up Flannel
+^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Run the following command to install flannel on your cluster:
++
+kubectl apply -f https://0y.at/kubicflannel
+2.  Check on your nodes
++
+watch kubectl get nodes
++
+In 1-2 minutes all of them should be in a Ready status. Click on *Ctrl
+c* on your keyboard to exit this screen.
++
+
+You now have a fully functional Kubernetes cluster! You can add more
+worker nodes at any time and then bootstrap them in like you did above.
+
+[cols="",]
+|=======================================================================
+a|
+Summary:
+
+In this section you completed your Kubic Kubernetes cluster. It is now
+fully functional and ready to be used.
+
+|=======================================================================
+
+(End of Exercise)

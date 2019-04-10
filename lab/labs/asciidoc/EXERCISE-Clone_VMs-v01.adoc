@@ -1,0 +1,63 @@
+[cols=",",]
+|====
+|- |
+|====
+
+[cols="",]
+|==========================================================
+a|
+Description:
+
+In this section you will create VMs for your Kubic cluster.
+
+|==========================================================
+
+[[task-1-create-the-kubic-master-node]]
+Task 1: Create the Kubic Master Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Right-click on the Kubic-CloneMaster VM and choose Clone
+2.  In the Name field, enter:
++
+Kubic-Master
+3.  In the Mac Address Policy field, choose:
++
+Generate new MAC addresses for all network adapters
+4.  On the Clone type screen, choose Linked Clone
++
+Click Clone
+
+[[task-2-create-a-kubic-worker-node]]
+Task 2: Create a Kubic Worker Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1.  Right-click on the Kubic-CloneMaster VM and choose Clone
+2.  In the Name field, enter:
++
+Kubic-Worker1
+3.  In the Mac Address Policy field, choose:
++
+Generate new MAC addresses for all network adapters
+4.  On the Clone type screen, choose Linked Clone
++
+Click Clone
+5.  Repeat this task once more and create *Kubic_Worker2*. You may
+repeat as many times as you like as long as you have memory and disk
+space for each node.
+
+The Kubic-CloneMaster VM can be deleted at this point if you don’t think
+you will need more nodes or it can be left as a template. If it is
+deleted, it can always be recreated using the steps in the previous
+section.
+
+[cols="",]
+|=======================================================================
+a|
+Summary:
+
+In this section you created additional VMs that will be used as Master
+and Worker nodes in an openUSE Kubic Kubernetes cluster.
+
+|=======================================================================
+
+(End of Exercise)
