@@ -23,43 +23,44 @@ This tutorial was written using Virtualbox 6.0. It contains step by step instruc
 . Click on the Network Icon
 . Click on the first icon on the right that Adds new NAT network
 . Click on the third icon on the right that Edits selected NAT network
-
-  The Network CIDR should be:
-  10.0.2.0/24
-  Leave the rest of the settings as their default values
-  Click OK to close this screen
-
+The Network CIDR should be:
+{nbsp} +
+`[green]*10.0.2.0/24*`
+{nbsp} +
+Leave the rest of the settings as their default values
+{nbsp} +
+Click OK to close this screen
 . Click OK to close the preferences screen
 
 ==== Task 3: Set up a new VM
 . Open VirtualBox and Click on the New icon:
 . In the Name field, enter a name:
 
- Kubic-CloneMaster
+[gray]*Kubic-CloneMaster*
 
 . In the Version field, choose OpenSUSE 64-bit
-
- Click Next
+{nbsp} +
+Click Next
 
 . Allow for 2048MB RAM
-
- Click Next
+{nbsp} +
+Click Next
 
 . Choose Create a virtual hard disk now
-
- Click Next
+{nbsp} +
+Click Next
 
 . Choose VDI (Virtual Disk Image)
-
- Click Next
+{nbsp} +
+Click Next
 
 . Choose Dynamically allocated
-
- Click Next
+{nbsp} +
+Click Next
 
 . Allow for 30GB
-
- Click Create
+{nbsp} +
+Click Create
 
 . Click on the Settings icon on the right
 
@@ -67,8 +68,9 @@ This tutorial was written using Virtualbox 6.0. It contains step by step instruc
 
 . Change Attached to
 
- NAT Network
- Name: NatNetwork
+[gray]*NAT Network*
+{nbsp} +
+[gray]*Name:* *NatNetwork*
 
 . Go to the System icon and click on the Processor tab
 . Change the number of processors to 2
@@ -76,27 +78,26 @@ This tutorial was written using Virtualbox 6.0. It contains step by step instruc
 
 ==== Task 4: Start Installation
 . On the main Virtualbox screen, choose Kubic-CloneMaster and click on the Start icon
-
- You will be prompted to Select a start-up disk
+{nbsp} +
+You will be prompted to Select a start-up disk
 
 . Click on the folder icon:
-
- Choose the current iso file that you downloaded in Task 1
-
-. Click start
+{nbsp} +
+Choose the current iso file that you downloaded in Task 1
+. Click [gray]*start*
 . When the virtual machine boots, choose the installation option.
 . On the license screen, click next if you agree
-. Choose kubeadm Node
-
+. Choose [gray]*kubeadm Node*
+{nbsp} +
  Click Next
-
 . Enter an NTP server local to you or use the default one that is provided
-
- Go to http://ntp.org for more information.
- Click Next
+{nbsp} +
+Click Next
+[NOTE]
+Go to http://ntp.org for more information.
 
 . Enter a root password and then confirm it
-
+{nbsp} +
  Click Next
 
 . Click Install
@@ -106,45 +107,48 @@ This tutorial was written using Virtualbox 6.0. It contains step by step instruc
 . Choose the first option: openSUSE Tumbleweed Kubic
 . Log into the command line:
 
- Userid: root
- Password: [your root password]
+[gray]*Userid:* *root*
+{nbsp} +
+[gray]*Password:* *[your root password]*
 
 . Eject the installation media:
-
- eject /dev/sr0
+{nbsp} +
+`[blue]*eject /dev/sr0*`
 
 . Install Yast for easier network configuration:
-
- transactional-update pkg install yast2-network
+{nbsp} +
+`[blue]*transactional-update pkg install yast2-network*`
 
 . Reboot your vm:
-
- reboot
+{nbsp} +
+`[blue]*reboot*`
 
 . Repeat steps 1-3 in this task:
 . Start the curses version of yast to configure networking
+{nbsp} +
+ `[blue]*yast2 lan*`
 
- yast2 lan
+. Use the *F4 key* on your keyboard to edit:
+{nbsp} +
+[NOTE]
+You can use the tab key to navigate the screen
 
-. Use the F4 key on your keyboard to edit:
-
- You can use the tab key to navigate the screen
-
-. Click alt t on your keyboard to change to Statically Assigned IP Address
+. Click *alt t* on your keyboard to change to Statically Assigned IP Address
 . In the IP Address field, enter:
-
- 10.0.2.10
+{nbsp} +
+`[green]*10.0.2.10*`
+{nbsp} +
  Use the tab key to go to the next field
 
 . In the Subnet Mask field, enter:
+{nbsp} +
+`[green]*/24*`
 
- /24
-
-. Use the F10 key to go to the next screen
-. Click alt s on your keyboard to change the Hostname/DNS
-. In the hostname field, enter: clone-master
-
- Use the tab key to go to the Name Server 1 field
+. Use the *F10 key* on your keyboard to go to the next screen
+. Click *alt s* on your keyboard to change the Hostname/DNS
+. In the hostname field, enter: *clone-master*
+{nbsp} +
+Use the tab key to go to the Name Server 1 field
 
 . Enter the generic Google DNS or substitute another if you prefer:
 
