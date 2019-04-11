@@ -21,6 +21,9 @@ node:
 `[blue]*kubeadm init --cri-socket=/var/run/crio/crio.sock \*` +
 `[blue]*--pod-network-cidr=10.244.0.0/16*`
 +
++++<p style="color:blue;"><tt><b>kubeadm init --cri-socket=/var/run/crio/crio.sock \<br>
+--pod-network-cidr=10.244.0.0/16</b></tt></p>+++
+
 You should see some output and at the end, you will see this:
 +
 You can now join any number of machines by running the following on each
