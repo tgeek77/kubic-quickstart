@@ -19,3 +19,6 @@ include::EXERCISE-Configure_Master_and_Worker_VMs-v01.adoc[]
 == Section 4: Bootstrap the Cluster
 include::EXERCISE-Bootstrap_Cluster-v01.adoc[]
 <<<
+
+== License
+include::license.adoc[]
