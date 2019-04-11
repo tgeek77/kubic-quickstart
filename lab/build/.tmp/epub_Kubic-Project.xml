@@ -25,17 +25,17 @@
   </para>
   <section xml:id="_section_1_setup_the_clone_master">
     <title>Section 1: Setup the Clone Master</title>
+    <note>
+      <para>This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.</para>
+    </note>
     <informaltable frame="all" rowsep="1" colsep="1">
       <tgroup cols="1">
         <colspec colname="col_1" colwidth="100*"/>
         <tbody>
           <row>
             <entry align="left" valign="top">
-              <para>Description:
-In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.</para>
-              <note>
-                <para>This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.</para>
-              </note>
+              <para role="lead">Description:</para>
+              <para>In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.</para>
             </entry>
           </row>
         </tbody>
@@ -62,11 +62,13 @@ In this section you will set up a Kubic Clone Master which will make it easier t
           <para>Click on the first icon on the right that Adds new NAT network</para>
         </listitem>
         <listitem>
-          <para>Click on the third icon on the right that Edits selected NAT network</para>
-          <screen>The Network CIDR should be:
-10.0.2.0/24
+          <para>Click on the third icon on the right that Edits selected NAT network
+The Network CIDR should be:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="green">10.0.2.0/24</phrase></emphasis></literal>
+ <?asciidoc-br?>
 Leave the rest of the settings as their default values
-Click OK to close this screen</screen>
+ <?asciidoc-br?>
+Click OK to close this screen</para>
         </listitem>
         <listitem>
           <para>Click OK to close the preferences screen</para>
@@ -80,32 +82,38 @@ Click OK to close this screen</screen>
           <para>Open VirtualBox and Click on the New icon:</para>
         </listitem>
         <listitem>
-          <para>In the Name field, enter a name:</para>
-          <screen>Kubic-CloneMaster</screen>
+          <para>In the Name field, enter a name:
+ <?asciidoc-br?><emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis></para>
         </listitem>
         <listitem>
-          <para>In the Version field, choose OpenSUSE 64-bit</para>
-          <screen>Click Next</screen>
+          <para>In the Version field, choose <emphasis role="strong">OpenSUSE 64-bit</emphasis>
+ <?asciidoc-br?>
+Click Next</para>
         </listitem>
         <listitem>
-          <para>Allow for 2048MB RAM</para>
-          <screen>Click Next</screen>
+          <para>Allow for <emphasis role="strong">2048MB RAM</emphasis>
+ <?asciidoc-br?>
+Click Next</para>
         </listitem>
         <listitem>
-          <para>Choose Create a virtual hard disk now</para>
-          <screen>Click Next</screen>
+          <para>Choose <emphasis role="strong">Create a virtual hard disk now</emphasis>
+ <?asciidoc-br?>
+Click Next</para>
         </listitem>
         <listitem>
-          <para>Choose VDI (Virtual Disk Image)</para>
-          <screen>Click Next</screen>
+          <para>Choose <emphasis role="strong">VDI (Virtual Disk Image)</emphasis>
+ <?asciidoc-br?>
+Click Next</para>
         </listitem>
         <listitem>
-          <para>Choose Dynamically allocated</para>
-          <screen>Click Next</screen>
+          <para>Choose <emphasis role="strong">Dynamically allocated</emphasis>
+ <?asciidoc-br?>
+Click Next</para>
         </listitem>
         <listitem>
-          <para>Allow for 30GB</para>
-          <screen>Click Create</screen>
+          <para>Allow for <emphasis role="strong">30GB</emphasis>
+ <?asciidoc-br?>
+Click <emphasis role="strong"><phrase role="gray">Create</phrase></emphasis></para>
         </listitem>
         <listitem>
           <para>Click on the Settings icon on the right</para>
@@ -115,14 +123,16 @@ Click OK to close this screen</screen>
         </listitem>
         <listitem>
           <para>Change Attached to</para>
-          <screen>NAT Network
-Name: NatNetwork</screen>
         </listitem>
+      </orderedlist>
+      <para><emphasis role="strong"><phrase role="gray">NAT Network</phrase></emphasis>
+ <?asciidoc-br?><emphasis role="strong"><phrase role="gray">Name:</phrase></emphasis><emphasis role="strong">NatNetwork</emphasis></para>
+      <orderedlist numeration="arabic">
         <listitem>
           <para>Go to the System icon and click on the Processor tab</para>
         </listitem>
         <listitem>
-          <para>Change the number of processors to 2</para>
+          <para>Change the number of processors to <emphasis role="strong">2</emphasis></para>
         </listitem>
         <listitem>
           <para>Click OK</para>
@@ -133,15 +143,17 @@ Name: NatNetwork</screen>
       <title>Task 4: Start Installation</title>
       <orderedlist numeration="arabic">
         <listitem>
-          <para>On the main Virtualbox screen, choose Kubic-CloneMaster and click on the Start icon</para>
-          <screen>You will be prompted to Select a start-up disk</screen>
+          <para>On the main Virtualbox screen, choose <emphasis role="strong">Kubic-CloneMaster</emphasis> and click on the Start icon
+ <?asciidoc-br?>
+You will be prompted to Select a start-up disk</para>
         </listitem>
         <listitem>
-          <para>Click on the folder icon:</para>
-          <screen>Choose the current iso file that you downloaded in Task 1</screen>
+          <para>Click on the folder icon:
+ <?asciidoc-br?>
+Choose the current iso file that you downloaded in Task 1</para>
         </listitem>
         <listitem>
-          <para>Click start</para>
+          <para>Click <emphasis role="strong"><phrase role="gray">start</phrase></emphasis></para>
         </listitem>
         <listitem>
           <para>When the virtual machine boots, choose the installation option.</para>
@@ -150,20 +162,25 @@ Name: NatNetwork</screen>
           <para>On the license screen, click next if you agree</para>
         </listitem>
         <listitem>
-          <para>Choose kubeadm Node</para>
-          <screen>Click Next</screen>
+          <para>Choose <emphasis role="strong"><phrase role="gray">kubeadm Node</phrase></emphasis>
+ <?asciidoc-br?>
+ Click Next</para>
         </listitem>
         <listitem>
-          <para>Enter an NTP server local to you or use the default one that is provided</para>
-          <screen>Go to http://ntp.org for more information.
-Click Next</screen>
+          <para>Enter an NTP server local to you or use the default one that is provided
+ <?asciidoc-br?>
+Click Next</para>
+          <note>
+            <para>Go to <link xl:href="http://ntp.org">http://ntp.org</link> for more information.</para>
+          </note>
         </listitem>
         <listitem>
-          <para>Enter a root password and then confirm it</para>
-          <screen>Click Next</screen>
+          <para>Enter a root password and then confirm it
+ <?asciidoc-br?>
+ Click Next</para>
         </listitem>
         <listitem>
-          <para>Click Install</para>
+          <para>Click <emphasis role="strong"><phrase role="gray">Install</phrase></emphasis></para>
         </listitem>
       </orderedlist>
     </section>
@@ -171,98 +188,114 @@ Click Next</screen>
       <title>Task 5: Post-Installation setup</title>
       <orderedlist numeration="arabic">
         <listitem>
-          <para>After the installation has finished, the VM will reboot. Choose Boot from Hard Disk</para>
+          <para>After the installation has finished, the VM will reboot. Choose <emphasis role="strong">Boot from Hard Disk</emphasis></para>
         </listitem>
         <listitem>
-          <para>Choose the first option: openSUSE Tumbleweed Kubic</para>
+          <para>Choose the first option: <emphasis role="strong">openSUSE Tumbleweed Kubic</emphasis></para>
         </listitem>
         <listitem>
           <para>Log into the command line:</para>
-          <screen>Userid: root
-Password: [your root password]</screen>
+        </listitem>
+      </orderedlist>
+      <para><emphasis role="strong"><phrase role="gray">Userid:</phrase></emphasis><emphasis role="strong">root</emphasis>
+ <?asciidoc-br?><emphasis role="strong"><phrase role="gray">Password:</phrase></emphasis><emphasis role="strong">[your root password]</emphasis></para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para>Eject the installation media:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">eject /dev/sr0</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Eject the installation media:</para>
-          <screen>eject /dev/sr0</screen>
+          <para>Install Yast for easier network configuration:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">transactional-update pkg install yast2-network</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Install Yast for easier network configuration:</para>
-          <screen>transactional-update pkg install yast2-network</screen>
-        </listitem>
-        <listitem>
-          <para>Reboot your vm:</para>
-          <screen>reboot</screen>
+          <para>Reboot your vm:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">reboot</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
           <para>Repeat steps 1-3 in this task:</para>
         </listitem>
         <listitem>
-          <para>Start the curses version of yast to configure networking</para>
-          <screen>yast2 lan</screen>
+          <para>Start the curses version of yast to configure networking
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">yast2 lan</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Use the F4 key on your keyboard to edit:</para>
-          <screen>You can use the tab key to navigate the screen</screen>
+          <para>Use the <emphasis role="strong">F4 key</emphasis> on your keyboard to edit:
+ <?asciidoc-br?></para>
+          <note>
+            <para>You can use the tab key to navigate the screen</para>
+          </note>
         </listitem>
         <listitem>
-          <para>Click alt t on your keyboard to change to Statically Assigned IP Address</para>
+          <para>Click <emphasis role="strong">alt t</emphasis> on your keyboard to change to Statically Assigned IP Address</para>
         </listitem>
         <listitem>
-          <para>In the IP Address field, enter:</para>
-          <screen>10.0.2.10
-Use the tab key to go to the next field</screen>
+          <para>In the IP Address field, enter:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="green">10.0.2.10</phrase></emphasis></literal>
+ <?asciidoc-br?>
+ Use the tab key to go to the next field</para>
         </listitem>
         <listitem>
-          <para>In the Subnet Mask field, enter:</para>
-          <screen>/24</screen>
+          <para>In the Subnet Mask field, enter:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="green">/24</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Use the F10 key to go to the next screen</para>
+          <para>Use the <emphasis role="strong">F10 key</emphasis> on your keyboard to go to the next screen</para>
         </listitem>
         <listitem>
-          <para>Click alt s on your keyboard to change the Hostname/DNS</para>
+          <para>Click <emphasis role="strong">alt s</emphasis> on your keyboard to change the Hostname/DNS</para>
         </listitem>
         <listitem>
-          <para>In the hostname field, enter: clone-master</para>
-          <screen>Use the tab key to go to the Name Server 1 field</screen>
+          <para>In the hostname field, enter: <emphasis role="strong">clone-master</emphasis>
+ <?asciidoc-br?>
+Use the <emphasis role="strong">tab key</emphasis> to go to the <emphasis role="strong"><phrase role="gray">Name Server 1</phrase></emphasis> field</para>
         </listitem>
         <listitem>
-          <para>Enter the generic Google DNS or substitute another if you prefer:</para>
-          <screen>8.8.8.8</screen>
+          <para>Enter the generic Google DNS or substitute another if you prefer:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="green">8.8.8.8</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Click alt u on your keyboard to change the Routing</para>
+          <para>Click <emphasis role="strong">alt u</emphasis> on your keyboard to change the Routing</para>
         </listitem>
         <listitem>
-          <para>In the Default IPv4 Gateway field, enter:</para>
-          <screen>10.0.2.2</screen>
+          <para>In the <emphasis role="strong"><phrase role="gray">Default IPv4 Gateway</phrase></emphasis> field, enter:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="green">10.0.2.2</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Select click alt i on your keyboard to select Enable IPv4 Forwarding</para>
+          <para>Select click <emphasis role="strong">alt i</emphasis> on your keyboard to select Enable IPv4 Forwarding</para>
         </listitem>
         <listitem>
-          <para>Use the F10 key to finish.</para>
+          <para>Use the <emphasis role="strong">F10 key</emphasis> to finish.</para>
         </listitem>
         <listitem>
-          <para>Ping the gateway. If you get a positive response, then you have set up the network correctly:</para>
-          <screen>ping 10.0.2.2</screen>
+          <para>Ping the gateway. If you get a positive response, then you have set up the network correctly:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">ping 10.0.2.2</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
-          <para>Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:</para>
-          <screen>ping opensuse.org</screen>
+          <para>Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">ping opensuse.org</phrase></emphasis></literal></para>
         </listitem>
         <listitem>
           <para>If either step 19 or 20 gives an error, review the steps in this task.</para>
         </listitem>
         <listitem>
-          <para>Shut down the VM:</para>
-          <screen>halt -p</screen>
+          <para>Shut down the VM:
+ <?asciidoc-br?><literal><emphasis role="strong"><phrase role="blue">halt -p</phrase></emphasis></literal></para>
         </listitem>
       </orderedlist>
-      <note>
-        <title>Summary</title>
-        <para>In this section you set up a new Kubic VM which will be used as a template for creating further VMs.</para>
-      </note>
+      <informaltable frame="all" rowsep="1" colsep="1">
+        <tgroup cols="1">
+          <colspec colname="col_1" colwidth="100*"/>
+          <tbody>
+            <row>
+              <entry align="left" valign="top">
+                <para>Description:
+In this section you set up a new Kubic VM which will be used as a template for creating further VMs.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
       <para>
         <?asciidoc-pagebreak?>
       </para>
@@ -276,7 +309,7 @@ Use the tab key to go to the next field</screen>
         <tbody>
           <row>
             <entry align="left" valign="top">
-              <para>Description:</para>
+              <para role="lead">Description:</para>
               <para>In this section you will create VMs for your Kubic cluster.</para>
             </entry>
           </row>
@@ -287,19 +320,20 @@ Use the tab key to go to the next field</screen>
       <title>Task 1: Create the Kubic Master Node</title>
       <orderedlist numeration="arabic">
         <listitem>
-          <para>Right-click on the Kubic-CloneMaster VM and choose Clone</para>
+          <para>Right-click on the <emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis> VM and choose <emphasis role="strong">Clone</emphasis></para>
         </listitem>
         <listitem>
-          <para>In the Name field, enter:</para>
-          <para>Kubic-Master</para>
+          <para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:
+ <?asciidoc-br?><emphasis role="strong">Kubic-Master</emphasis></para>
         </listitem>
         <listitem>
-          <para>In the Mac Address Policy field, choose:</para>
-          <para>Generate new MAC addresses for all network adapters</para>
+          <para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:
+ <?asciidoc-br?><emphasis role="strong">Generate new MAC addresses for all network adapters</emphasis></para>
         </listitem>
         <listitem>
-          <para>On the Clone type screen, choose Linked Clone</para>
-          <para>Click Clone</para>
+          <para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis>
+ <?asciidoc-br?>
+Click <emphasis role="strong">Clone</emphasis></para>
         </listitem>
       </orderedlist>
     </section>
@@ -307,19 +341,20 @@ Use the tab key to go to the next field</screen>
       <title>Task 2: Create a Kubic Worker Node</title>
       <orderedlist numeration="arabic">
         <listitem>
-          <para>Right-click on the Kubic-CloneMaster VM and choose Clone</para>
+          <para>Right-click on the <emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis> VM and choose <emphasis role="strong">Clone</emphasis></para>
         </listitem>
         <listitem>
-          <para>In the Name field, enter:</para>
-          <para>Kubic-Worker1</para>
+          <para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:
+ <?asciidoc-br?><emphasis role="strong">Kubic-Worker1</emphasis></para>
         </listitem>
         <listitem>
-          <para>In the Mac Address Policy field, choose:</para>
-          <para>Generate new MAC addresses for all network adapters</para>
+          <para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:
+ <?asciidoc-br?><emphasis role="strong">Generate new MAC addresses for all network adapters</emphasis></para>
         </listitem>
         <listitem>
-          <para>On the Clone type screen, choose Linked Clone</para>
-          <para>Click Clone</para>
+          <para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis>
+ <?asciidoc-br?>
+Click <emphasis role="strong">Clone</emphasis></para>
         </listitem>
         <listitem>
           <para>Repeat this task once more and create <emphasis role="strong">Kubic_Worker2</emphasis>. You may
@@ -328,7 +363,7 @@ space for each node.</para>
         </listitem>
       </orderedlist>
       <note>
-        <para>The Kubic-CloneMaster VM can be deleted at this point if you don’t think
+        <para>The <emphasis role="strong">Kubic-CloneMaster</emphasis> VM can be deleted at this point if you don’t think
 you will need more nodes or it can be left as a template. If it is
 deleted, it can always be recreated using the steps in the previous
 section.</para>
@@ -360,7 +395,7 @@ and Worker nodes in an openUSE Kubic Kubernetes cluster.</para>
         <tbody>
           <row>
             <entry align="left" valign="top">
-              <para>Description:</para>
+              <para role="lead">Description:</para>
               <para>In this section, you will change the IP addresses on the Master and
 Worker VMs to be unique.</para>
             </entry>
@@ -485,7 +520,7 @@ Start</para>
           <para>Use the <emphasis role="strong">F10</emphasis> key to finish</para>
           <para>Repeat Task 2 for each worker node. Add 1 to the IP address and hostname
 for each node that you configure using the pattern in this section.</para>
-          <para>All nodes should be able to ping 10.0.2.2, each other, and an internet
+          <para>All nodes should be able to ping <literal><emphasis role="strong"><phrase role="green">10.0.2.2</phrase></emphasis></literal>, each other, and an internet
 website.</para>
         </listitem>
       </orderedlist>
@@ -516,7 +551,7 @@ so they are ready to create a Kubernetes cluster</para>
         <tbody>
           <row>
             <entry align="left" valign="top">
-              <para>Description:</para>
+              <para role="lead">Description:</para>
               <para>In this section you will bootstrap your Kubic Kubernetes cluster</para>
             </entry>
           </row>
@@ -734,8 +769,27 @@ fully functional and ready to be used.</para>
           </tbody>
         </tgroup>
       </informaltable>
-      <para>(End of Exercise)
-&lt;&lt;&lt;</para>
+      <para>
+        <?asciidoc-pagebreak?>
+      </para>
     </section>
+  </section>
+  <section xml:id="_license">
+    <title>License</title>
+    <para>This work is licensed under a <link xl:href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</link></para>
+    <para>You are free to:</para>
+    <para><emphasis role="strong">Share</emphasis> — copy and redistribute the material in any medium or format</para>
+    <para><emphasis role="strong">Adapt</emphasis> — remix, transform, and build upon the material for any purpose, even commercially.</para>
+    <para>This license is acceptable for Free Cultural Works.</para>
+    <para>The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:</para>
+    <para><emphasis role="strong">Attribution</emphasis> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</para>
+    <para><emphasis role="strong">ShareAlike</emphasis> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</para>
+    <para><emphasis role="strong">No additional restrictions</emphasis> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</para>
+    <para>
+      <emphasis role="strong">Notices:</emphasis>
+    </para>
+    <para>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</para>
   </section>
 </article>

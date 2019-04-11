@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Section 4: Bootstrap the Cluster</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_section_4_bootstrap_the_cluster"/>Section 4: Bootstrap the Cluster</h1></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
-              <p>Description:</p>
+              <p class="lead">Description:</p>
               <p>In this section you will bootstrap your Kubic Kubernetes cluster</p>
             </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="_task_1_set_up_kubic_master"/>Task 1: Set up Kubic-Master</h2></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Login into the <span class="strong"><strong>Kubic-Master</strong></span> VM if you have not already done so:</p><p><span class="strong"><strong><span class="gray">Userid</span></strong></span>: <span class="strong"><strong>root</strong></span></p><p><span class="strong"><strong><span class="gray">Password</span></strong></span>: <span class="strong"><strong>[your root password]</strong></span></p></li><li class="listitem"><p>Run the following command to configure this as a Kubernetes master
 node:</p><p><code class="literal"><span class="strong"><strong><span class="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</span></strong></span></code>
@@ -86,5 +86,6 @@ worker nodes at any time and then bootstrap them in like you did above.</p></li>
                 <p>Summary:</p>
                 <p>In this section you completed your Kubic Kubernetes cluster. It is now
 fully functional and ready to be used.</p>
-              </td></tr></tbody></table></div><p>(End of Exercise)
-&lt;&lt;&lt;</p></div></div></body></html>
+              </td></tr></tbody></table></div><p>
+        
+      </p></div></div></body></html>
