@@ -1,6 +1,7 @@
 [cols="",]
 |=======================================================================
 a|
+[.lead]
 Description:
 
 In this section, you will change the IP addresses on the Master and
@@ -57,7 +58,7 @@ Start
 Repeat Task 2 for each worker node. Add 1 to the IP address and hostname
 for each node that you configure using the pattern in this section.
 +
-All nodes should be able to ping 10.0.2.2, each other, and an internet
+All nodes should be able to ping `[green]*10.0.2.2*`, each other, and an internet
 website.
 
 [cols="",]
