@@ -1,6 +1,7 @@
 [cols="",]
 |===============================================================
 a|
+[.lead]
 Description:
 
 In this section you will bootstrap your Kubic Kubernetes cluster
@@ -128,5 +129,3 @@ In this section you completed your Kubic Kubernetes cluster. It is now
 fully functional and ready to be used.
 
 |=======================================================================
-
-(End of Exercise)
