@@ -1,18 +1,10 @@
 [cols="",]
 |=======================================================================
 a|
+[.lead]
 Description:
 In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.
-[NOTE]
-=======================================================================
-This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.
-=======================================================================
 |=======================================================================
-
-
-
-
-
 
 ==== Task 1: Download the installation media
 
@@ -35,32 +27,32 @@ Click OK to close this screen
 ==== Task 3: Set up a new VM
 . Open VirtualBox and Click on the New icon:
 . In the Name field, enter a name:
-
+{nbsp} +
 [gray]*Kubic-CloneMaster*
 
-. In the Version field, choose OpenSUSE 64-bit
+. In the Version field, choose *OpenSUSE 64-bit*
 {nbsp} +
 Click Next
 
-. Allow for 2048MB RAM
+. Allow for *2048MB RAM*
 {nbsp} +
 Click Next
 
-. Choose Create a virtual hard disk now
+. Choose *Create a virtual hard disk now*
 {nbsp} +
 Click Next
 
-. Choose VDI (Virtual Disk Image)
+. Choose *VDI (Virtual Disk Image)*
 {nbsp} +
 Click Next
 
-. Choose Dynamically allocated
+. Choose *Dynamically allocated*
 {nbsp} +
 Click Next
 
-. Allow for 30GB
+. Allow for *30GB*
 {nbsp} +
-Click Create
+Click [gray]*Create*
 
 . Click on the Settings icon on the right
 
@@ -73,11 +65,11 @@ Click Create
 [gray]*Name:* *NatNetwork*
 
 . Go to the System icon and click on the Processor tab
-. Change the number of processors to 2
+. Change the number of processors to *2*
 . Click OK
 
 ==== Task 4: Start Installation
-. On the main Virtualbox screen, choose Kubic-CloneMaster and click on the Start icon
+. On the main Virtualbox screen, choose *Kubic-CloneMaster* and click on the Start icon
 {nbsp} +
 You will be prompted to Select a start-up disk
 
@@ -100,11 +92,11 @@ Go to http://ntp.org for more information.
 {nbsp} +
  Click Next
 
-. Click Install
+. Click [gray]*Install*
 
 ==== Task 5: Post-Installation setup
-. After the installation has finished, the VM will reboot. Choose Boot from Hard Disk
-. Choose the first option: openSUSE Tumbleweed Kubic
+. After the installation has finished, the VM will reboot. Choose *Boot from Hard Disk*
+. Choose the first option: *openSUSE Tumbleweed Kubic*
 . Log into the command line:
 
 [gray]*Userid:* *root*
@@ -148,34 +140,36 @@ You can use the tab key to navigate the screen
 . Click *alt s* on your keyboard to change the Hostname/DNS
 . In the hostname field, enter: *clone-master*
 {nbsp} +
-Use the tab key to go to the Name Server 1 field
+Use the *tab key* to go to the [gray]*Name Server 1* field
 
 . Enter the generic Google DNS or substitute another if you prefer:
+{nbsp} +
+`[green]*8.8.8.8*`
 
- 8.8.8.8
+. Click *alt u* on your keyboard to change the Routing
+. In the [gray]*Default IPv4 Gateway* field, enter:
+{nbsp} +
+`[green]*10.0.2.2*`
 
-. Click alt u on your keyboard to change the Routing
-. In the Default IPv4 Gateway field, enter:
-
- 10.0.2.2
-
-. Select click alt i on your keyboard to select Enable IPv4 Forwarding
-. Use the F10 key to finish.
+. Select click *alt i* on your keyboard to select Enable IPv4 Forwarding
+. Use the *F10 key* to finish.
 . Ping the gateway. If you get a positive response, then you have set up the network correctly:
-
- ping 10.0.2.2
+{nbsp} +
+`[blue]*ping 10.0.2.2*`
 
 . Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
-
- ping opensuse.org
+{nbsp} +
+`[blue]*ping opensuse.org*`
 
 .  If either step 19 or 20 gives an error, review the steps in this task.
 . Shut down the VM:
+{nbsp} +
+`[blue]*halt -p*`
 
- halt -p
-
-.Summary
-[NOTE]
-=========
+[cols="",]
+|=======================================================================
+a|
+[.lead]
+Description:
 In this section you set up a new Kubic VM which will be used as a template for creating further VMs.
-=========
+|=======================================================================
