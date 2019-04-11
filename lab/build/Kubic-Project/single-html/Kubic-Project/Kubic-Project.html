@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OpenSUSE Kubic</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets snapshot)" /><meta name="book-title" content="OpenSUSE Kubic" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OpenSUSE Kubic</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets snapshot)" /><meta name="book-title" content="OpenSUSE Kubic" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
@@ -351,17 +351,17 @@ so they are ready to create a Kubernetes cluster</p></td></tr></tbody></table>
 
 <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
 <p>Login into the <span class="strong"><strong>Kubic-Master</strong></span> VM if you have not already done so:</p>
-<p><span class="strong"><strong><span class="gray">Userid</span></strong></span>: <span class="strong"><strong>root</strong></span></p>
-<p><span class="strong"><strong><span class="gray">Password</span></strong></span>: <span class="strong"><strong>[your root password]</strong></span></p>
+<p><span class="emphasis"><em>Userid:</em></span> <span class="strong"><strong>root</strong></span>
+<span class="emphasis"><em>Password:</em></span> <span class="strong"><strong>[your root password]</strong></span></p>
 </li><li class="listitem ">
 <p>Run the following command to configure this as a Kubernetes master
 node:</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</span></strong></span></code>
-<code class="literal"><span class="strong"><strong><span class="blue">--pod-network-cidr=10.244.0.0/16</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</pre></div>
 <p>You should see some output and at the end, you will see this:</p>
 <p>You can now join any number of machines by running the following on each
 node as root:</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">kubeadm join 10.0.2.11:6443 --token …</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">kubeadm join 10.0.2.11:6443 --token …*</pre></div>
 <div id="id-1.6.3.2.2.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
 <p>Save this command. You will need it later!</p>
 </div>
@@ -371,7 +371,7 @@ node as root:</p>
 
 <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
 <p>Power off the Kubic-Master VM</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">halt -p</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">halt -p</pre></div>
 </li><li class="listitem ">
 <p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Master VM</strong></span> and
 click on Settings</p>
@@ -393,7 +393,7 @@ Start</p>
 </li><li class="listitem ">
 <p>Start the curses version of yast to configure networking on the new
 nic</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">yast2 lan</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">yast2 lan</pre></div>
 </li><li class="listitem ">
 <p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit the new nic</p>
 </li><li class="listitem ">
@@ -405,7 +405,7 @@ your network does not have DHCP, set a static IP instead.</p>
 <p>Click on <span class="strong"><strong>F10</strong></span> on your keyboard to exit yast</p>
 </li><li class="listitem ">
 <p>Find your new IP addresses</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">ip a</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">ip a</pre></div>
 <p>You should now be able to log into the Kubic-Master using the terminal
 or application of your choice. You can also now copy and paste from this
 book.</p>
@@ -415,12 +415,11 @@ book.</p>
 
 <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
 <p>Login to the Kubic-Worker1 VM if you have not already done so:</p>
-<p>Userid: <span class="strong"><strong>root</strong></span></p>
-<p>Password: <span class="strong"><strong>[your root password]</strong></span></p>
+<p><span class="emphasis"><em>Userid:</em></span> <span class="strong"><strong>root</strong></span>
+<span class="emphasis"><em>Password:</em></span> <span class="strong"><strong>[your root password]</strong></span></p>
 </li><li class="listitem ">
-<p>Run the output command from Task 1 and add</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">--cri-socket=/var/run/crio/crio.sock</span></strong></span></code></p>
-<p>to the end of the command</p>
+<p>Run the output command from Task 1 and add to the end of the command:</p>
+<div class="verbatim-wrap"><pre class="screen">--cri-socket=/var/run/crio/crio.sock</pre></div>
 </li><li class="listitem ">
 <p>Repeat this task for every worker VM</p>
 </li></ol></div>
@@ -430,12 +429,12 @@ book.</p>
 <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
 <p>On the <span class="strong"><strong>Kubic-Master</strong></span> VM, copy and set up the config file so that
 kubectl can interact with the cluster:</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">mkdir -p $HOME/.kube</span></strong></span></code></p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span></strong></span></code></p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">sudo chown $(id -u):$(id -g) $HOME/.kube/config</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config</pre></div>
 </li><li class="listitem ">
 <p>Check on your nodes</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">kubectl get nodes</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">kubectl get nodes</pre></div>
 <p>You should have 3 nodes. All of them should be in a NotReady status</p>
 </li></ol></div>
 </div>
@@ -443,10 +442,10 @@ kubectl can interact with the cluster:</p>
 
 <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
 <p>Run the following command to install flannel on your cluster:</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">kubectl apply -f <a class="ulink" href="https://0y.at/kubicflannel" target="_blank">https://0y.at/kubicflannel<span class="ulink-url"> (https://0y.at/kubicflannel)</span></a></span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">kubectl apply -f https://0y.at/kubicflannel</pre></div>
 </li><li class="listitem ">
 <p>Check on your nodes</p>
-<p><code class="literal"><span class="strong"><strong><span class="blue">watch kubectl get nodes</span></strong></span></code></p>
+<div class="verbatim-wrap"><pre class="screen">watch kubectl get nodes</pre></div>
 <p>In 1-2 minutes all of them should be in a Ready status. Click on <span class="strong"><strong>Ctrl
 c</strong></span> on your keyboard to exit this screen.</p>
 <p>You now have a fully functional Kubernetes cluster! You can add more
@@ -476,6 +475,6 @@ Under the following terms:</p>
 <p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
 No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p>
 </div>
-</div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+</div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2019 
-        SUSE</p></div></div></body></html>
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
