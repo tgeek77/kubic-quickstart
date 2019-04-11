@@ -3,6 +3,7 @@
 a|
 [.lead]
 Description:
+
 In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.
 |=======================================================================
 
@@ -169,7 +170,6 @@ Use the *tab key* to go to the [gray]*Name Server 1* field
 [cols="",]
 |=======================================================================
 a|
-[.lead]
 Description:
 In this section you set up a new Kubic VM which will be used as a template for creating further VMs.
 |=======================================================================
