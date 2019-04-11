@@ -6,7 +6,6 @@ Description:
 
 In this section, you will change the IP addresses on the Master and
 Worker VMs to be unique.
-
 |=======================================================================
 
 ==== Task 1: Configure the Kubic-Master VM

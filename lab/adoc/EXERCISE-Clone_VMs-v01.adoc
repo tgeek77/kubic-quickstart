@@ -11,27 +11,21 @@ In this section you will create VMs for your Kubic cluster.
 ==== Task 1: Create the Kubic Master Node
 
 . Right-click on the [gray]*Kubic-CloneMaster* VM and choose *Clone*
-. In the [gray]*Name* field, enter:
-{nbsp} +
+. In the [gray]*Name* field, enter: +
 *Kubic-Master*
-. In the [gray]*Mac Address Policy* field, choose:
-{nbsp} +
+. In the [gray]*Mac Address Policy* field, choose: +
 *Generate new MAC addresses for all network adapters*
-. On the [gray]*Clone type* screen, choose *Linked Clone*
-{nbsp} +
+. On the [gray]*Clone type* screen, choose *Linked Clone* +
 Click *Clone*
 
 ==== Task 2: Create a Kubic Worker Node
 
 . Right-click on the [gray]*Kubic-CloneMaster* VM and choose *Clone*
-. In the [gray]*Name* field, enter:
-{nbsp} +
+. In the [gray]*Name* field, enter: +
 *Kubic-Worker1*
-. In the [gray]*Mac Address Policy* field, choose:
-{nbsp} +
+. In the [gray]*Mac Address Policy* field, choose: +
 *Generate new MAC addresses for all network adapters*
-. On the [gray]*Clone type* screen, choose *Linked Clone*
-{nbsp} +
+. On the [gray]*Clone type* screen, choose *Linked Clone* +
 Click *Clone*
 . Repeat this task once more and create *Kubic_Worker2*. You may
 repeat as many times as you like as long as you have memory and disk

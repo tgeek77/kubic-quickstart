@@ -18,8 +18,7 @@ In this section you will bootstrap your Kubic Kubernetes cluster
 . Run the following command to configure this as a Kubernetes master
 node:
 +
-`[blue]*kubeadm init --cri-socket=/var/run/crio/crio.sock \*`
-{nbsp} +
+`[blue]*kubeadm init --cri-socket=/var/run/crio/crio.sock \*` +
 `[blue]*--pod-network-cidr=10.244.0.0/16*`
 +
 You should see some output and at the end, you will see this:
