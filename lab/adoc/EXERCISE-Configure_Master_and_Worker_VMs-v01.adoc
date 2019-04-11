@@ -15,16 +15,16 @@ click on the down arrow next to the start icon. Click on Detachable
 Start
 . Log into the command line:
 +
-Userid: *root*
+[gray]*Userid:* *root*
 +
-Password: *[your root password]*
+[gray]*Password:* *[your root password]*
 . Start the curses version of yast to configure networking
 +
- yast2 lan
+`[blue]*yast2 lan*`
 
 . Use the *F4* key on your keyboard to edit
 . Use the *tab* key to navigate around the screen
-. Change the IP address to *10.0.2.11*
+. Change the IP address to `[green]*10.0.2.11*`
 . Change the Hostname to *kubic-master*
 . Use the *F10* key to go the next screen
 . User the **alt s **keys to go to the Hostname/DNS screen
@@ -38,16 +38,16 @@ click on the down arrow next to the start icon. Click on Detachable
 Start
 . Log into the command line:
 +
-Userid: *root*
+[gray]*Userid:* *root*
 +
-Password: *[your root password]*
+[gray]*Password:* *[your root password]*
 . Start the curses version of yast to configure networking
 +
- yast2 lan
+`[blue]*yast2 lan*`
 
 . Use the *F4* key on your keyboard to edit
 . Use the *tab* key to navigate around the screen
-. Change the IP address to *10.0.2.12*
+. Change the IP address to `[green]*10.0.2.12*`
 . Change the Hostname to *kubic-worker1*
 . Use the *F10* key to go the next screen
 . User the **alt s **keys to go to the Hostname/DNS screen

@@ -5,17 +5,17 @@ v1.0, 2019-04-10
 
 <<<
 == Section 1: Setup the Clone Master
-include::labs/asciidoc/EXERCISE-Setup_Clone_Master-v01.adoc[]
+include::EXERCISE-Setup_Clone_Master-v01.adoc[]
 <<<
 
 == Section 2: Clone the VMs
-include::labs/asciidoc/EXERCISE-Clone_VMs-v01.adoc[]
+include::EXERCISE-Clone_VMs-v01.adoc[]
 <<<
 
 == Section 3: Configure the Master and Worker VMs
-include::labs/asciidoc/EXERCISE-Configure_Master_and_Worker_VMs-v01.adoc[]
+include::EXERCISE-Configure_Master_and_Worker_VMs-v01.adoc[]
 <<<
 
 == Section 4: Bootstrap the Cluster
-include::labs/asciidoc/EXERCISE-Bootstrap_Cluster-v01.adoc[]
+include::EXERCISE-Bootstrap_Cluster-v01.adoc[]
 <<<
