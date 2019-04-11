@@ -38,7 +38,7 @@ repeat as many times as you like as long as you have memory and disk
 space for each node.
 
 [NOTE]
-The *Kubic-CloneMaster VM* can be deleted at this point if you don’t think
+The *Kubic-CloneMaster* VM can be deleted at this point if you don’t think
 you will need more nodes or it can be left as a template. If it is
 deleted, it can always be recreated using the steps in the previous
 section.
