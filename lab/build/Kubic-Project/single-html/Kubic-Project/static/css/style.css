@@ -39,12 +39,12 @@ a {
  /* Selection colour, the unprefixed Webkit version & the -moz-prefixed
     version must be on separate lines for it to work. */
 ::selection {
-    background-color: #3465A4;
+    background-color: #439239;
     color: #FFF;
 }
 
 ::-moz-selection {
-    background-color: #3465A4;
+    background-color: #439239;
     color: #FFF;
 }
 
@@ -124,7 +124,7 @@ html, body {
 }
 
 #_content {
-    background: url(../images/dots-gray.png) repeat-x scroll 0px 0px;
+    background: transparent url(../images/dots-gray.png) repeat-x scroll 0px 0px;
     min-height: 139px;
     clear: both;
     min-width: 150px;
@@ -141,15 +141,15 @@ html, body {
 
 #_logo {
     float: left;
-    margin: 22px 22px 27px 10px;
-    width: 103px;
+    margin: 22px 22px 27px 0;
+    width: 81px;
     height: 38px;
 }
 
 #_logo img {
-    width: 103px;
+    width: 81px;
     height: 38px;
-    color: #3465A4;
+    color: #439239;
     line-height: 55px;
     font-weight: 600;
     display: block;
@@ -164,7 +164,7 @@ html, body {
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
-    margin: 0 0 0 140px;
+    margin: 0 0 0 110px;
     height: 36px;
     max-width: 70%;
     max-width: calc(100% - 120px);
@@ -203,7 +203,7 @@ html, body {
 }
 
 .crumbs > a:hover, .crumbs > a:focus, .crumbs > a:active {
-    color: #3465A4;
+    color: #439239;
     text-decoration: none;
 }
 
@@ -225,7 +225,7 @@ html, body {
 
 #_header .single-crumb:hover, #_header .single-crumb:focus,
 #_header .single-crumb:active {
-    background-color: #3465A4;
+    background-color: #999;
     color: #FFF;
 }
 
@@ -247,7 +247,7 @@ html, body {
 .back-icon, #_find-button, .bubble-corner:before, .bubble-closer,
 .single-contents-icon, #_print-button:before, #_share-fb:before,
 #_share-gp:before, #_share-tw:before, #_share-mail:before,
-.arch-arrow-start:after, .arch-arrow-end, .ulink:after {
+.arch-arrow-start:after, .arch-arrow-end, .ulink:after, .link:after {
     background-image: url(../images/icons.png);
     background-repeat: no-repeat;
 }
@@ -432,7 +432,7 @@ html, body {
 }
 
 #_pickers .bubble .selected {
-    background-color: #4F669D;
+    background-color: #5E9632;
     background-image: url(../images/tick.png);
     background-repeat: no-repeat;
     background-position: right top;
@@ -455,7 +455,8 @@ html, body {
     margin: 0 0 15px;
     width: 100%;
     min-width: 150px;
-    background-color: #3465A4;
+    background-image: url(../images/dots-grayongreen.png);
+    background-color: #76AD2D;
     position: relative;
     z-index: 4;
 }
@@ -796,7 +797,7 @@ a:active > .find-icon {
 }
 
 #_bubble-toc .active > a {
-    background-color: #4F669D;
+    background-color: #5E9632;
     color: #FFF;
 }
 #_bubble-toc .active {
@@ -949,7 +950,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 
 .top-button:hover, .top-button:focus, .top-button:active {
     text-decoration: none;
-    color: #3465A4;
+    color: #439239;
 }
 
 .button > a > .prev-icon {
@@ -1036,7 +1037,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 .nav-link:hover > .nav-label,
 .nav-link:focus > .nav-label,
 .nav-link:active > .nav-label {
-    color: #3465A4;
+    color: #439239;
 }
 
 .bottom-button {
@@ -1100,7 +1101,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 .bottom-button:hover, .bottom-button:focus,
 .bottom-button:active {
     border: 1px solid rgba(20,20,20,0.5);
-    background: #DEDEDE;
+    background-color: #DEDEDE;
 }
 
 .bottom-button:hover:before, .bottom-button:focus:before,
@@ -1225,7 +1226,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 }
 
 
-.ulink:after {
+.ulink:after, .link:after {
     content: "\0020\2197";
     color: transparent;
     width: 18px;
@@ -1238,13 +1239,13 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
     top: 2px;
 }
 
-.legalnotice .ulink:after {
+.legalnotice .ulink:after, .legalnotice .link:after {
     background-position: -216px -101px;
     width: 15px;
     height: 10px;
 }
 
-.ulink-url {
+.ulink-url, .link-url {
     display: none;
 }
 
@@ -1253,7 +1254,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 }
 
 div.version-info {
-    color: #3465A4;
+    color: #439239;
     font-weight: normal;
     background-color: rgba(255,255,255,0.7);
     padding: 3px 5px;
@@ -1274,7 +1275,7 @@ h6.version-info {
     padding: 5px 7px;
     font-size: 24px;
     color: #FFF;
-    background-color: #729FCF;
+    background-color: #76AD2D;
     float: left;
     line-height: 100%;
 }
@@ -1290,7 +1291,7 @@ h6.version-info {
     line-height: 120%;
     width: auto;
     clear: both;
-    color: #3465A4;
+    color: #439239;
     padding: 70px 0 50px;
 }
 
@@ -1398,8 +1399,8 @@ h6.version-info {
 }
 
 .name, .refentry h2, .refentrytitle a, h2, .indexdiv h3, .qandadiv-title,
-.qandaset .title {
-    color: #3465A4;
+.qandaset .title, .glossdiv .title {
+    color: #439239;
 }
 
 a:hover .name, a:focus .name, a:active .name,
@@ -1423,7 +1424,7 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
 
 .nav-link:hover .number, .nav-link:focus .number,
 .nav-link:active .number {
-    color: #729FCF;
+    color: #68C05E;
 }
 
 #_bubble-toc .number {
@@ -1457,7 +1458,7 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
     line-height: 15px;
     overflow: hidden;
     padding: 0 3px;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid transparent;
     background-color: #EEE;
     text-transform: uppercase;
     display: inline-block;
@@ -1466,7 +1467,7 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
 
 .permalink:hover, .permalink:focus, .permalink:active,
 .report-bug:hover, .report-bug:focus, .report-bug:active {
-    color: #3465A4;
+    color: #439239;
     text-decoration: none !important;
 }
 
@@ -1486,7 +1487,7 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
 
 .line {
     margin: 17px 0 36px 0;
-    border-bottom: 1px solid #3465A4;
+    border-bottom: 1px solid #439239;
     width: 100%;
 }
 
@@ -1510,75 +1511,96 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
 /* Thou shalt not ... */
 
 .admonition {
+    margin: 17px 0 24px;
+}
+
+.admonition.normal {
     border-width: 1px;
     border-radius: 3px;
     border-style: solid;
     padding: 10px;
-    margin: 17px 0 24px;
 }
 
-.tip {
-    border-color: #3465A4;
-    background: #FFF url(../images/dots-blue.png) repeat-x scroll top;
+.tip.admonition.normal {
+    border-color: #439239;
+    background: #FFF url(../images/dots-green.png) repeat-x scroll top;
 }
 
-.note {
+.note.admonition.normal {
     border-color: #666;
     background: #FFF url(../images/dots-darkgray.png) repeat-x scroll top;
 }
 
-.note ul, .note .orderedlist, .warning ul, .warning .orderedlist {
+.note.admonition.normal ul, .note.admonition.normal .orderedlist,
+.warning.admonition.normal ul, .warning.admonition.normal .orderedlist {
     color: #666;
 }
 
-.important {
+.important.admonition.normal {
     border-color: #BB7B03;
     background: #FFF url(../images/dots-orange.png) repeat-x scroll top;
 }
 
-.important ul, .important .orderedlist {
+.important.admonition.normal ul, .important .orderedlist {
     color: #BB7B03;
 }
 
-.warning, .caution {
+.warning.admonition.normal, .caution.admonition.normal {
     border-color: #8C0000;
     background: #FFF url(../images/dots-red.png) repeat-x scroll top;
 }
 
 .admonition > h6 {
     font-weight: 600;
+}
+
+.admonition.normal > h6 {
     vertical-align: middle;
     display: table-cell;
     height: 36px;
 }
 
-.tip > h6 {
-    color: #3465A4;
+/* FIXME: does not look correct with multi-line items. */
+.admonition.compact > h6 {
+    color: #666;
+    height: 24px;
 }
 
-.note > h6 {
+.tip.admonition.normal > h6 {
+    color: #439239;
+}
+
+.note.admonition.normal > h6 {
     color: #333;
 }
 
-.important > h6 {
+.important.admonition.normal > h6 {
     color: #BB7B03;
 }
 
-.warning > h6, .caution > h6 {
+.warning.admonition.normal > h6, .caution.admonition.normal > h6 {
     color: #8C0000;
 }
 
-.symbol {
+.admonition > .symbol {
     width: 36px;
     height: 36px;
     margin: 0 10px 0 0;
-    background-repeat: no-repeat;
     float: left;
-    overflow: hidden;
+}
+
+.admonition.compact > .symbol {
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
 }
 
 .admonition p {
     margin: 10px 0 0 !important;
+}
+
+.admonition.compact > p:nth-child(1) {
+    margin-top: 0 !important;
 }
 
 /* Text styles */
@@ -1597,14 +1619,26 @@ em .guimenu, i .guimenu, .question em {
     font-style: normal; /* Don't use italics within italics... */
 }
 
+sub, sup {
+    line-height: 0;
+    font-size: 66.6%;
+}
+
+sub {
+    vertical-align: sub;
+}
+sup {
+    vertical-align: super;
+}
+
 strong, b, .imprint-label, .version-info .productname,
 .version-info .productnumber, .toc-title, .formalpara-title {
     font-weight: 600;
 }
 
 .arch-arrow-start {
-    background-color: #729FCF;
-    border: 1px solid #3465A4;
+    background-color: #7DC24D;
+    border: 1px solid #439239;
     border-radius: 3px;
     padding: 0 2px 0 4px;
     display: inline-block;
@@ -1644,7 +1678,7 @@ p, td {
     hyphens: auto;
 }
 
-.ulink, .email, .phrase {
+.ulink, .link, .email, .phrase {
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -1699,8 +1733,12 @@ p, .simplelist td {
 
 .ulink, .link, .xref, .email, .glosssee,
 .glossseealso, .indexterm {
-    color: #3465A4;
+    color: #439239;
     text-decoration: none;
+}
+
+.remark .xref, .remark .ulink, .remark .link{
+    color: #FFFFFF;
 }
 
 .title .xref, .subtitle .xref, .table-title .xref, .example-title .xref,
@@ -1729,7 +1767,7 @@ p, .simplelist td {
 .glossseealso:visited:hover, .glossseealso:visited:focus, .glossseealso:visited:active,
 .indexterm:hover, .indexterm:focus, .indexterm:active,
 .indexterm:visited:hover, .indexterm:visited:focus, .indexterm:visited:active {
-    color: #3465A4;
+    color: #439239;
     text-decoration: underline;
 }
 
@@ -1749,7 +1787,7 @@ p, .simplelist td {
 .itemizedlist-title .xref:hover, .itemizedlist-title .xref:focus, .itemizedlist-title .xref:active,
 .variablelist-title .xref:hover, .variablelist-title .xref:focus, .variablelist-title .xref:active,
 .qandadiv-title .xref:hover, .qandadiv-title .xref:focus, .qandadiv-title .xref:active {
-    color: #3465A4;
+    color: #439239;
     text-decoration: none;
 }
 
@@ -1795,8 +1833,9 @@ code, .command, .keycap, .literal, .package {
 paddings/borders... In some rare case, there might e.g. be an image inside a
 code/etc. element and then this might backfire. */
 code *, .keycap *, .replaceable *, .literal *, .package * {
-    padding: 0;
-    border: none;
+    padding: 0 !important;
+    border: none !important;
+    display: inline;
 }
 
 
@@ -1874,8 +1913,9 @@ code, .literal, .replaceable, .package {
     color: #333;
 }
 
+
 .verbatim-wrap .command {
-    color: #204A87;
+    color: #306928;
 }
 
 .complex-example .example-contents {
@@ -1906,12 +1946,19 @@ code, .literal, .replaceable, .package {
     padding: 1px 6px 1.5px 5px;
     margin: 0 5px;
     border-radius: 10px;
-    background-color: #3465A4;
+    background-color: #439239;
     color: #FFF;
     font-family: 'Open Sans', Helvetica, FreeSans, sans-serif;
     font-size: 13px;
     line-height: 13px;
     font-weight: 600;
+}
+
+/* highlight.js likes to recolor our text. ugh! */
+.callout * {
+    color: #FFF !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
 }
 
 .verbatim-wrap .callout {
@@ -1921,7 +1968,9 @@ code, .literal, .replaceable, .package {
     user-select: none;
 }
 
-.calloutlist .callout {
+/* xrefs in a calloutlist can contain .callout too, so make sure we don't
+catch those. */
+.calloutlist td:nth-child(1) .callout {
     position: relative;
     top: 2px;
     float: right;
@@ -2146,13 +2195,13 @@ a:hover .package, a:focus .package, a:active .package {
 }
 
 .procedure-contents {
-    border-left: 3px solid #8CA4C0;
+    border-left: 3px solid #9CC897;
     font-weight: normal;
     margin: 17px 0 17px;
     /* Up top, 3px of padding look better than 5 would (with line-height interfering etc.).
     On the left, we use 5px-3px of border, so it sits right there with any other lists etc. */
     padding: 3px 5px 6px 2px;
-    background-color: #F6F8FA;
+    background-color: #F7FAF6;
     display: block;
 }
 
@@ -2177,7 +2226,7 @@ a:hover .package, a:focus .package, a:active .package {
 
 ol.procedure, ol.substeps, ol.orderedlist {
     display: block;
-    color: #3465A4;
+    color: #439239;
     font-weight: 600;
 }
 
@@ -2308,7 +2357,7 @@ ul {
     padding: 5px 0 0 35px;
     margin: 0 10px;
     display: block;
-    color: #3465A4;
+    color: #439239;
     list-style-type: disc;
 }
 
@@ -2322,6 +2371,15 @@ ul {
 
 li > p {
     font-weight: normal;
+}
+
+.step-optional {
+    color: #666;
+    font-style: italic;
+}
+
+.step-optional + p {
+    margin-top: 0;
 }
 
 .procedure > p {
@@ -2491,7 +2549,7 @@ p.ds-message {
 }
 
 .draft {
-    background: url(../images/draft.png) no-repeat fixed left 50%;
+    background: #FFF url(../images/draft.png) no-repeat fixed left 50%;
 }
 
 @page {
@@ -2516,8 +2574,8 @@ p.ds-message {
     }
 
     .callout {
-        border: 1px solid #3465A4;
-        color: #3465A4;
+        border: 1px solid #439239;
+        color: #439239;
     }
 
     #_fixed-header-wrap, #_toolbar-wrap, #_pickers, #_inward, #_footer-wrap,
@@ -2544,14 +2602,14 @@ p.ds-message {
         break-after: avoid;
     }
 
-    .ulink:after {
+    .ulink:after, .link:after {
         color: inherit;
         background-image: none;
         width: auto;
         height: auto;
     }
 
-    .ulink-url {
+    .ulink-url, .link-url {
         display: inline;
         -webkit-hyphens: none;
         -moz-hyphens: none;
@@ -2608,7 +2666,7 @@ p.ds-message {
 
     #_find-area {
         height: 42px;
-        background-color: #3465A4;
+        background-color: #439239;
         width: 100%;
         padding: 0 !important;
         overflow: hidden;
@@ -2708,7 +2766,7 @@ p.ds-message {
     }
 
     #_nav-area {
-        border-top: 1px solid #729FCF;
+        border-top: 1px solid #7DC24D;
     }
 
     .nav-inner > .tool-spacer {
@@ -2749,7 +2807,7 @@ p.ds-message {
         padding-right: 10px;
         width: 100% !important;
         position: fixed;
-        left: 0;
+        left: -10px;
         top: 0;
         min-height: 35px;
         border-radius: 0;
@@ -3018,7 +3076,7 @@ p.ds-message {
         margin: 0 auto;
     }
 
-    .documentation ul, .documentation ol {
+    .documentation ul, .documentation  ol {
         padding-left: 10px;
     }
 
@@ -3028,7 +3086,7 @@ p.ds-message {
         padding-left: 10px;
     }
 
-    .admonition > .symbol {
+    .admonition.normal > .symbol {
         float: none;
         /* Remove proprietary attributes later on */
         padding-left: -webkit-calc(50% - 18px);
@@ -3064,7 +3122,7 @@ p.ds-message {
         max-width: -moz-calc(100% + 20px);
         max-width: calc(100% + 20px);
     }
-    .documentation ol.procedure {
+    .documentation  ol.procedure {
         padding-left: 20px;
     }
 
