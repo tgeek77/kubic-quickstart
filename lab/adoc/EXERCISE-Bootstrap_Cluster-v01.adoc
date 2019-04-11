@@ -5,28 +5,26 @@ a|
 Description:
 
 In this section you will bootstrap your Kubic Kubernetes cluster
-
 |===============================================================
 
 ==== Task 1: Set up Kubic-Master
 
 . Login into the *Kubic-Master* VM if you have not already done so:
 +
-[gray]*Userid*: *root*
-+
-[gray]*Password*: *[your root password]*
+_Userid:_ *root* +
+_Password:_ *[your root password]*
 . Run the following command to configure this as a Kubernetes master
 node:
 +
-`[blue]*kubeadm init --cri-socket=/var/run/crio/crio.sock \*` +
-`[blue]*--pod-network-cidr=10.244.0.0/16*`
+ kubeadm init --cri-socket=/var/run/crio/crio.sock \
+ --pod-network-cidr=10.244.0.0/16
 +
 You should see some output and at the end, you will see this:
 +
 You can now join any number of machines by running the following on each
 node as root:
 +
-`[blue]*kubeadm join 10.0.2.11:6443 --token …*`
+ kubeadm join 10.0.2.11:6443 --token …*
 +
 [IMPORTANT]
 Save this command. You will need it later!
@@ -35,8 +33,8 @@ Save this command. You will need it later!
 
 . Power off the Kubic-Master VM
 +
-`[blue]*halt -p*`
-
+ halt -p
++
 . From the main Virtualbox screen, choose the *Kubic-Master VM* and
 click on Settings
 . Click on the Network icon
@@ -57,7 +55,7 @@ Password: *[your root password]*
 . Start the curses version of yast to configure networking on the new
 nic
 +
-`[blue]*yast2 lan*`
+ yast2 lan
 
 . Use the *F4* key on your keyboard to edit the new nic
 . Click on *alt y* on your keyboard to change this nic to DHCP. If
@@ -66,7 +64,7 @@ your network does not have DHCP, set a static IP instead.
 . Click on *F10* on your keyboard to exit yast
 . Find your new IP addresses
 +
-`[blue]*ip a*`
+ ip a
 +
 You should now be able to log into the Kubic-Master using the terminal
 or application of your choice. You can also now copy and paste from this
@@ -76,14 +74,12 @@ book.
 
 . Login to the Kubic-Worker1 VM if you have not already done so:
 +
-Userid: *root*
+_Userid:_ *root* +
+_Password:_ *[your root password]*
+. Run the output command from Task 1 and add to the end of the command:
 +
-Password: *[your root password]*
-. Run the output command from Task 1 and add
+ --cri-socket=/var/run/crio/crio.sock
 +
-`[blue]*--cri-socket=/var/run/crio/crio.sock*`
-+
-to the end of the command +
 . Repeat this task for every worker VM
 
 ==== Task 4: Set up the kubectl
@@ -91,15 +87,13 @@ to the end of the command +
 . On the *Kubic-Master* VM, copy and set up the config file so that
 kubectl can interact with the cluster:
 +
-`[blue]*mkdir -p $HOME/.kube*`
+ mkdir -p $HOME/.kube
+ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 +
-`[blue]*sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config*`
-+
-`[blue]*sudo chown $(id -u):$(id -g) $HOME/.kube/config*`
-
 . Check on your nodes
 +
-`[blue]*kubectl get nodes*`
+ kubectl get nodes
 +
 You should have 3 nodes. All of them should be in a NotReady status
 
@@ -107,10 +101,11 @@ You should have 3 nodes. All of them should be in a NotReady status
 
 . Run the following command to install flannel on your cluster:
 +
-`[blue]*kubectl apply -f https://0y.at/kubicflannel*`
+ kubectl apply -f https://0y.at/kubicflannel
++
 . Check on your nodes
 +
-`[blue]*watch kubectl get nodes*`
+ watch kubectl get nodes
 +
 In 1-2 minutes all of them should be in a Ready status. Click on *Ctrl
 c* on your keyboard to exit this screen.
