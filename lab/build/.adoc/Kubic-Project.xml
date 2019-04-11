@@ -493,35 +493,30 @@ so they are ready to create a Kubernetes cluster</simpara></entry>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Login into the <emphasis role="strong">Kubic-Master</emphasis> VM if you have not already done so:</simpara>
-<simpara><emphasis role="strong"><phrase role="gray">Userid</phrase></emphasis>: <emphasis role="strong">root</emphasis></simpara>
-<simpara><emphasis role="strong"><phrase role="gray">Password</phrase></emphasis>: <emphasis role="strong">[your root password]</emphasis></simpara>
+<simpara><emphasis>Userid:</emphasis> <emphasis role="strong">root</emphasis><?asciidoc-br?>
+<emphasis>Password:</emphasis> <emphasis role="strong">[your root password]</emphasis></simpara>
 </listitem>
 <listitem>
 <simpara>Run the following command to configure this as a Kubernetes master
 node:</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</phrase></emphasis></literal><?asciidoc-br?>
-<literal><emphasis role="strong"><phrase role="blue">--pod-network-cidr=10.244.0.0/16</phrase></emphasis></literal></simpara>
-<simpara><p style="color:blue"><tt>kubeadm init --cri-socket=/var/run/crio/crio.sock \
---pod-network-cidr=10.244.0.0/16</tt></p></simpara>
-</listitem>
-</orderedlist>
+<literallayout class="monospaced">kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</literallayout>
 <simpara>You should see some output and at the end, you will see this:</simpara>
-<simpara>+
-You can now join any number of machines by running the following on each
+<simpara>You can now join any number of machines by running the following on each
 node as root:</simpara>
-<simpara>+
-<literal><emphasis role="strong"><phrase role="blue">kubeadm join 10.0.2.11:6443 --token …</phrase></emphasis></literal></simpara>
-<simpara>+</simpara>
+<literallayout class="monospaced">kubeadm join 10.0.2.11:6443 --token …*</literallayout>
 <important>
 <simpara>Save this command. You will need it later!</simpara>
 </important>
+</listitem>
+</orderedlist>
 </section>
 <section xml:id="_task_2_optional_add_a_second_network_interface_to_kubic_master_vm">
 <title>Task 2: (optional) Add a second network interface to Kubic-Master VM</title>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Power off the Kubic-Master VM</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">halt -p</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">halt -p</literallayout>
 </listitem>
 <listitem>
 <simpara>From the main Virtualbox screen, choose the <emphasis role="strong">Kubic-Master VM</emphasis> and
@@ -549,7 +544,7 @@ Start</simpara>
 <listitem>
 <simpara>Start the curses version of yast to configure networking on the new
 nic</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">yast2 lan</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">yast2 lan</literallayout>
 </listitem>
 <listitem>
 <simpara>Use the <emphasis role="strong">F4</emphasis> key on your keyboard to edit the new nic</simpara>
@@ -566,7 +561,7 @@ your network does not have DHCP, set a static IP instead.</simpara>
 </listitem>
 <listitem>
 <simpara>Find your new IP addresses</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">ip a</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">ip a</literallayout>
 <simpara>You should now be able to log into the Kubic-Master using the terminal
 or application of your choice. You can also now copy and paste from this
 book.</simpara>
@@ -578,13 +573,12 @@ book.</simpara>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Login to the Kubic-Worker1 VM if you have not already done so:</simpara>
-<simpara>Userid: <emphasis role="strong">root</emphasis></simpara>
-<simpara>Password: <emphasis role="strong">[your root password]</emphasis></simpara>
+<simpara><emphasis>Userid:</emphasis> <emphasis role="strong">root</emphasis><?asciidoc-br?>
+<emphasis>Password:</emphasis> <emphasis role="strong">[your root password]</emphasis></simpara>
 </listitem>
 <listitem>
-<simpara>Run the output command from Task 1 and add</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">--cri-socket=/var/run/crio/crio.sock</phrase></emphasis></literal></simpara>
-<simpara>to the end of the command<?asciidoc-br?></simpara>
+<simpara>Run the output command from Task 1 and add to the end of the command:</simpara>
+<literallayout class="monospaced">--cri-socket=/var/run/crio/crio.sock</literallayout>
 </listitem>
 <listitem>
 <simpara>Repeat this task for every worker VM</simpara>
@@ -597,13 +591,13 @@ book.</simpara>
 <listitem>
 <simpara>On the <emphasis role="strong">Kubic-Master</emphasis> VM, copy and set up the config file so that
 kubectl can interact with the cluster:</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">mkdir -p $HOME/.kube</phrase></emphasis></literal></simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</phrase></emphasis></literal></simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">sudo chown $(id -u):$(id -g) $HOME/.kube/config</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config</literallayout>
 </listitem>
 <listitem>
 <simpara>Check on your nodes</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">kubectl get nodes</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">kubectl get nodes</literallayout>
 <simpara>You should have 3 nodes. All of them should be in a NotReady status</simpara>
 </listitem>
 </orderedlist>
@@ -613,11 +607,11 @@ kubectl can interact with the cluster:</simpara>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Run the following command to install flannel on your cluster:</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">kubectl apply -f <link xl:href="https://0y.at/kubicflannel">https://0y.at/kubicflannel</link></phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">kubectl apply -f https://0y.at/kubicflannel</literallayout>
 </listitem>
 <listitem>
 <simpara>Check on your nodes</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">watch kubectl get nodes</phrase></emphasis></literal></simpara>
+<literallayout class="monospaced">watch kubectl get nodes</literallayout>
 <simpara>In 1-2 minutes all of them should be in a Ready status. Click on <emphasis role="strong">Ctrl
 c</emphasis> on your keyboard to exit this screen.</simpara>
 <simpara>You now have a fully functional Kubernetes cluster! You can add more
