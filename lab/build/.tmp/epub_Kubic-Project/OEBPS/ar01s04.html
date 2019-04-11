@@ -3,8 +3,19 @@
               <p class="lead">Description:</p>
               <p>In this section you will bootstrap your Kubic Kubernetes cluster</p>
             </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="_task_1_set_up_kubic_master"/>Task 1: Set up Kubic-Master</h2></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Login into the <span class="strong"><strong>Kubic-Master</strong></span> VM if you have not already done so:</p><p><span class="strong"><strong><span class="gray">Userid</span></strong></span>: <span class="strong"><strong>root</strong></span></p><p><span class="strong"><strong><span class="gray">Password</span></strong></span>: <span class="strong"><strong>[your root password]</strong></span></p></li><li class="listitem"><p>Run the following command to configure this as a Kubernetes master
-node:</p><p><code class="literal"><span class="strong"><strong><span class="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</span></strong></span></code>
- <code class="literal"><span class="strong"><strong><span class="blue">--pod-network-cidr=10.244.0.0/16</span></strong></span></code></p><p>You should see some output and at the end, you will see this:</p><p>You can now join any number of machines by running the following on each
+node:</p><p>
+            <code class="literal">
+              <span class="strong"><strong>
+                <span class="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</span>
+              </strong></span>
+            </code>
+            
+            <code class="literal">
+              <span class="strong"><strong>
+                <span class="blue">--pod-network-cidr=10.244.0.0/16</span>
+              </strong></span>
+            </code>
+          </p><p>You should see some output and at the end, you will see this:</p><p>You can now join any number of machines by running the following on each
 node as root:</p><p>
             <code class="literal">
               <span class="strong"><strong>

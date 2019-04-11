@@ -59,12 +59,9 @@
 </listitem>
 <listitem>
 <para>Click on the third icon on the right that Edits selected NAT network
-The Network CIDR should be:
- <?asciidoc-br?>
-<literal><emphasis role="strong"><phrase role="green">10.0.2.0/24</phrase></emphasis></literal>
- <?asciidoc-br?>
-Leave the rest of the settings as their default values
- <?asciidoc-br?>
+The Network CIDR should be:<?asciidoc-br?>
+<literal><emphasis role="strong"><phrase role="green">10.0.2.0/24</phrase></emphasis></literal><?asciidoc-br?>
+Leave the rest of the settings as their default values<?asciidoc-br?>
 Click OK to close this screen</para>
 </listitem>
 <listitem>
@@ -79,38 +76,31 @@ Click OK to close this screen</para>
 <para>Open VirtualBox and Click on the New icon:</para>
 </listitem>
 <listitem>
-<para>In the Name field, enter a name:
- <?asciidoc-br?>
+<para>In the Name field, enter a name:<?asciidoc-br?>
 <emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis></para>
 </listitem>
 <listitem>
-<para>In the Version field, choose <emphasis role="strong">OpenSUSE 64-bit</emphasis>
- <?asciidoc-br?>
+<para>In the Version field, choose <emphasis role="strong">OpenSUSE 64-bit</emphasis><?asciidoc-br?>
 Click Next</para>
 </listitem>
 <listitem>
-<para>Allow for <emphasis role="strong">2048MB RAM</emphasis>
- <?asciidoc-br?>
+<para>Allow for <emphasis role="strong">2048MB RAM</emphasis><?asciidoc-br?>
 Click Next</para>
 </listitem>
 <listitem>
-<para>Choose <emphasis role="strong">Create a virtual hard disk now</emphasis>
- <?asciidoc-br?>
+<para>Choose <emphasis role="strong">Create a virtual hard disk now</emphasis><?asciidoc-br?>
 Click Next</para>
 </listitem>
 <listitem>
-<para>Choose <emphasis role="strong">VDI (Virtual Disk Image)</emphasis>
- <?asciidoc-br?>
+<para>Choose <emphasis role="strong">VDI (Virtual Disk Image)</emphasis><?asciidoc-br?>
 Click Next</para>
 </listitem>
 <listitem>
-<para>Choose <emphasis role="strong">Dynamically allocated</emphasis>
- <?asciidoc-br?>
+<para>Choose <emphasis role="strong">Dynamically allocated</emphasis><?asciidoc-br?>
 Click Next</para>
 </listitem>
 <listitem>
-<para>Allow for <emphasis role="strong">30GB</emphasis>
- <?asciidoc-br?>
+<para>Allow for <emphasis role="strong">30GB</emphasis><?asciidoc-br?>
 Click <emphasis role="strong"><phrase role="gray">Create</phrase></emphasis></para>
 </listitem>
 <listitem>
@@ -123,8 +113,7 @@ Click <emphasis role="strong"><phrase role="gray">Create</phrase></emphasis></pa
 <para>Change Attached to</para>
 </listitem>
 </orderedlist>
-<para><emphasis role="strong"><phrase role="gray">NAT Network</phrase></emphasis>
- <?asciidoc-br?>
+<para><emphasis role="strong"><phrase role="gray">NAT Network</phrase></emphasis><?asciidoc-br?>
 <emphasis role="strong"><phrase role="gray">Name:</phrase></emphasis> <emphasis role="strong">NatNetwork</emphasis></para>
 <orderedlist numeration="arabic">
 <listitem>
@@ -142,13 +131,11 @@ Click <emphasis role="strong"><phrase role="gray">Create</phrase></emphasis></pa
 <title>Task 4: Start Installation</title>
 <orderedlist numeration="arabic">
 <listitem>
-<para>On the main Virtualbox screen, choose <emphasis role="strong">Kubic-CloneMaster</emphasis> and click on the Start icon
- <?asciidoc-br?>
+<para>On the main Virtualbox screen, choose <emphasis role="strong">Kubic-CloneMaster</emphasis> and click on the Start icon<?asciidoc-br?>
 You will be prompted to Select a start-up disk</para>
 </listitem>
 <listitem>
-<para>Click on the folder icon:
- <?asciidoc-br?>
+<para>Click on the folder icon:<?asciidoc-br?>
 Choose the current iso file that you downloaded in Task 1</para>
 </listitem>
 <listitem>
@@ -161,22 +148,19 @@ Choose the current iso file that you downloaded in Task 1</para>
 <para>On the license screen, click next if you agree</para>
 </listitem>
 <listitem>
-<para>Choose <emphasis role="strong"><phrase role="gray">kubeadm Node</phrase></emphasis>
- <?asciidoc-br?>
- Click Next</para>
+<para>Choose <emphasis role="strong"><phrase role="gray">kubeadm Node</phrase></emphasis><?asciidoc-br?>
+Click Next</para>
 </listitem>
 <listitem>
-<para>Enter an NTP server local to you or use the default one that is provided
- <?asciidoc-br?>
+<para>Enter an NTP server local to you or use the default one that is provided<?asciidoc-br?>
 Click Next</para>
 <note>
 <para>Go to <link xl:href="http://ntp.org">http://ntp.org</link> for more information.</para>
 </note>
 </listitem>
 <listitem>
-<para>Enter a root password and then confirm it
- <?asciidoc-br?>
- Click Next</para>
+<para>Enter a root password and then confirm it<?asciidoc-br?>
+Click Next</para>
 </listitem>
 <listitem>
 <para>Click <emphasis role="strong"><phrase role="gray">Install</phrase></emphasis></para>
@@ -196,36 +180,30 @@ Click Next</para>
 <para>Log into the command line:</para>
 </listitem>
 </orderedlist>
-<para><emphasis role="strong"><phrase role="gray">Userid:</phrase></emphasis> <emphasis role="strong">root</emphasis>
- <?asciidoc-br?>
+<para><emphasis role="strong"><phrase role="gray">Userid:</phrase></emphasis> <emphasis role="strong">root</emphasis><?asciidoc-br?>
 <emphasis role="strong"><phrase role="gray">Password:</phrase></emphasis> <emphasis role="strong">[your root password]</emphasis></para>
 <orderedlist numeration="arabic">
 <listitem>
-<para>Eject the installation media:
- <?asciidoc-br?>
+<para>Eject the installation media:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">eject /dev/sr0</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
-<para>Install Yast for easier network configuration:
- <?asciidoc-br?>
+<para>Install Yast for easier network configuration:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">transactional-update pkg install yast2-network</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
-<para>Reboot your vm:
- <?asciidoc-br?>
+<para>Reboot your vm:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">reboot</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
 <para>Repeat steps 1-3 in this task:</para>
 </listitem>
 <listitem>
-<para>Start the curses version of yast to configure networking
- <?asciidoc-br?>
- <literal><emphasis role="strong"><phrase role="blue">yast2 lan</phrase></emphasis></literal></para>
+<para>Start the curses version of yast to configure networking<?asciidoc-br?>
+<literal><emphasis role="strong"><phrase role="blue">yast2 lan</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
-<para>Use the <emphasis role="strong">F4 key</emphasis> on your keyboard to edit:
- <?asciidoc-br?></para>
+<para>Use the <emphasis role="strong">F4 key</emphasis> on your keyboard to edit:<?asciidoc-br?></para>
 <note>
 <para>You can use the tab key to navigate the screen</para>
 </note>
@@ -234,15 +212,12 @@ Click Next</para>
 <para>Click <emphasis role="strong">alt t</emphasis> on your keyboard to change to Statically Assigned IP Address</para>
 </listitem>
 <listitem>
-<para>In the IP Address field, enter:
- <?asciidoc-br?>
-<literal><emphasis role="strong"><phrase role="green">10.0.2.10</phrase></emphasis></literal>
- <?asciidoc-br?>
+<para>In the IP Address field, enter:<?asciidoc-br?>
+<literal><emphasis role="strong"><phrase role="green">10.0.2.10</phrase></emphasis></literal><?asciidoc-br?>
  Use the tab key to go to the next field</para>
 </listitem>
 <listitem>
-<para>In the Subnet Mask field, enter:
- <?asciidoc-br?>
+<para>In the Subnet Mask field, enter:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="green">/24</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
@@ -252,21 +227,18 @@ Click Next</para>
 <para>Click <emphasis role="strong">alt s</emphasis> on your keyboard to change the Hostname/DNS</para>
 </listitem>
 <listitem>
-<para>In the hostname field, enter: <emphasis role="strong">clone-master</emphasis>
- <?asciidoc-br?>
+<para>In the hostname field, enter: <emphasis role="strong">clone-master</emphasis><?asciidoc-br?>
 Use the <emphasis role="strong">tab key</emphasis> to go to the <emphasis role="strong"><phrase role="gray">Name Server 1</phrase></emphasis> field</para>
 </listitem>
 <listitem>
-<para>Enter the generic Google DNS or substitute another if you prefer:
- <?asciidoc-br?>
+<para>Enter the generic Google DNS or substitute another if you prefer:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="green">8.8.8.8</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
 <para>Click <emphasis role="strong">alt u</emphasis> on your keyboard to change the Routing</para>
 </listitem>
 <listitem>
-<para>In the <emphasis role="strong"><phrase role="gray">Default IPv4 Gateway</phrase></emphasis> field, enter:
- <?asciidoc-br?>
+<para>In the <emphasis role="strong"><phrase role="gray">Default IPv4 Gateway</phrase></emphasis> field, enter:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="green">10.0.2.2</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
@@ -276,21 +248,18 @@ Use the <emphasis role="strong">tab key</emphasis> to go to the <emphasis role="
 <para>Use the <emphasis role="strong">F10 key</emphasis> to finish.</para>
 </listitem>
 <listitem>
-<para>Ping the gateway. If you get a positive response, then you have set up the network correctly:
- <?asciidoc-br?>
+<para>Ping the gateway. If you get a positive response, then you have set up the network correctly:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">ping 10.0.2.2</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
-<para>Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
- <?asciidoc-br?>
+<para>Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">ping opensuse.org</phrase></emphasis></literal></para>
 </listitem>
 <listitem>
 <para>If either step 19 or 20 gives an error, review the steps in this task.</para>
 </listitem>
 <listitem>
-<para>Shut down the VM:
- <?asciidoc-br?>
+<para>Shut down the VM:<?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">halt -p</phrase></emphasis></literal></para>
 </listitem>
 </orderedlist>
@@ -328,18 +297,15 @@ In this section you set up a new Kubic VM which will be used as a template for c
 <para>Right-click on the <emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis> VM and choose <emphasis role="strong">Clone</emphasis></para>
 </listitem>
 <listitem>
-<para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:
- <?asciidoc-br?>
+<para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:<?asciidoc-br?>
 <emphasis role="strong">Kubic-Master</emphasis></para>
 </listitem>
 <listitem>
-<para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:
- <?asciidoc-br?>
+<para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:<?asciidoc-br?>
 <emphasis role="strong">Generate new MAC addresses for all network adapters</emphasis></para>
 </listitem>
 <listitem>
-<para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis>
- <?asciidoc-br?>
+<para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis><?asciidoc-br?>
 Click <emphasis role="strong">Clone</emphasis></para>
 </listitem>
 </orderedlist>
@@ -351,18 +317,15 @@ Click <emphasis role="strong">Clone</emphasis></para>
 <para>Right-click on the <emphasis role="strong"><phrase role="gray">Kubic-CloneMaster</phrase></emphasis> VM and choose <emphasis role="strong">Clone</emphasis></para>
 </listitem>
 <listitem>
-<para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:
- <?asciidoc-br?>
+<para>In the <emphasis role="strong"><phrase role="gray">Name</phrase></emphasis> field, enter:<?asciidoc-br?>
 <emphasis role="strong">Kubic-Worker1</emphasis></para>
 </listitem>
 <listitem>
-<para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:
- <?asciidoc-br?>
+<para>In the <emphasis role="strong"><phrase role="gray">Mac Address Policy</phrase></emphasis> field, choose:<?asciidoc-br?>
 <emphasis role="strong">Generate new MAC addresses for all network adapters</emphasis></para>
 </listitem>
 <listitem>
-<para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis>
- <?asciidoc-br?>
+<para>On the <emphasis role="strong"><phrase role="gray">Clone type</phrase></emphasis> screen, choose <emphasis role="strong">Linked Clone</emphasis><?asciidoc-br?>
 Click <emphasis role="strong">Clone</emphasis></para>
 </listitem>
 <listitem>
@@ -534,8 +497,7 @@ so they are ready to create a Kubernetes cluster</para></entry>
 <listitem>
 <para>Run the following command to configure this as a Kubernetes master
 node:</para>
-<para><literal><emphasis role="strong"><phrase role="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</phrase></emphasis></literal>
- <?asciidoc-br?>
+<para><literal><emphasis role="strong"><phrase role="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</phrase></emphasis></literal><?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">--pod-network-cidr=10.244.0.0/16</phrase></emphasis></literal></para>
 <para>You should see some output and at the end, you will see this:</para>
 <para>You can now join any number of machines by running the following on each
