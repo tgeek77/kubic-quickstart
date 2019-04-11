@@ -499,15 +499,20 @@ so they are ready to create a Kubernetes cluster</para></entry>
 node:</para>
 <para><literal><emphasis role="strong"><phrase role="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</phrase></emphasis></literal><?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">--pod-network-cidr=10.244.0.0/16</phrase></emphasis></literal></para>
+<para><p style="color:blue"><tt>kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</tt></p></para>
+</listitem>
+</orderedlist>
 <para>You should see some output and at the end, you will see this:</para>
-<para>You can now join any number of machines by running the following on each
+<para>+
+You can now join any number of machines by running the following on each
 node as root:</para>
-<para><literal><emphasis role="strong"><phrase role="blue">kubeadm join 10.0.2.11:6443 --token …</phrase></emphasis></literal></para>
+<para>+
+<literal><emphasis role="strong"><phrase role="blue">kubeadm join 10.0.2.11:6443 --token …</phrase></emphasis></literal></para>
+<para>+</para>
 <important>
 <para>Save this command. You will need it later!</para>
 </important>
-</listitem>
-</orderedlist>
 </section>
 <section xml:id="_task_2_optional_add_a_second_network_interface_to_kubic_master_vm">
 <title>Task 2: (optional) Add a second network interface to Kubic-Master VM</title>

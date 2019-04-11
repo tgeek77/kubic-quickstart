@@ -501,15 +501,20 @@ so they are ready to create a Kubernetes cluster</simpara></entry>
 node:</simpara>
 <simpara><literal><emphasis role="strong"><phrase role="blue">kubeadm init --cri-socket=/var/run/crio/crio.sock \</phrase></emphasis></literal><?asciidoc-br?>
 <literal><emphasis role="strong"><phrase role="blue">--pod-network-cidr=10.244.0.0/16</phrase></emphasis></literal></simpara>
+<simpara><p style="color:blue"><tt>kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</tt></p></simpara>
+</listitem>
+</orderedlist>
 <simpara>You should see some output and at the end, you will see this:</simpara>
-<simpara>You can now join any number of machines by running the following on each
+<simpara>+
+You can now join any number of machines by running the following on each
 node as root:</simpara>
-<simpara><literal><emphasis role="strong"><phrase role="blue">kubeadm join 10.0.2.11:6443 --token …</phrase></emphasis></literal></simpara>
+<simpara>+
+<literal><emphasis role="strong"><phrase role="blue">kubeadm join 10.0.2.11:6443 --token …</phrase></emphasis></literal></simpara>
+<simpara>+</simpara>
 <important>
 <simpara>Save this command. You will need it later!</simpara>
 </important>
-</listitem>
-</orderedlist>
 </section>
 <section xml:id="_task_2_optional_add_a_second_network_interface_to_kubic_master_vm">
 <title>Task 2: (optional) Add a second network interface to Kubic-Master VM</title>

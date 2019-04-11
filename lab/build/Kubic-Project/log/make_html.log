@@ -1,3 +1,31 @@
-Thu 11 Apr 2019 07:59:01 PM CEST
-[32mSingle HTML book built with REMARKS=0, DRAFT=no and META=0:[0m
-[32m/home/jsevans/Project/kubic-quickstart/lab/build/Kubic-Project/single-html/Kubic-Project/[0m
+Thu 11 Apr 2019 08:11:43 PM CEST
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505: parser error : Opening and ending tag mismatch: br line 504 and b
+--pod-network-cidr=10.244.0.0/16</b></tt></p></simpara>
+                                    ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505: parser error : Opening and ending tag mismatch: b line 504 and tt
+--pod-network-cidr=10.244.0.0/16</b></tt></p></simpara>
+                                         ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505: parser error : Opening and ending tag mismatch: tt line 504 and p
+--pod-network-cidr=10.244.0.0/16</b></tt></p></simpara>
+                                             ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505: parser error : Opening and ending tag mismatch: p line 504 and simpara
+--pod-network-cidr=10.244.0.0/16</b></tt></p></simpara>
+                                                       ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:506: parser error : Opening and ending tag mismatch: simpara line 504 and listitem
+</listitem>
+           ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:507: parser error : Opening and ending tag mismatch: listitem line 499 and orderedlist
+</orderedlist>
+              ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:518: parser error : Opening and ending tag mismatch: orderedlist line 493 and section
+</section>
+          ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:658: parser error : Opening and ending tag mismatch: section line 478 and article
+</article>
+          ^
+/home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:658: parser error : Premature end of data in tag article line 4
+</article>
+          ^
+unable to parse /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml
+/usr/share/daps/make/setfiles.mk:45: *** Fatal error:
+ERROR: Opening and ending tag mismatch: br line 504 and b, line 505, column 38 (Kubic-Project.xml, line 505)        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505:38:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: br line 504 and b        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505:43:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: b line 504 and tt        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505:47:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: tt line 504 and p        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:505:57:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: p line 504 and simpara        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:506:12:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: simpara line 504 and listitem        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:507:15:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: listitem line 499 and orderedlist        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:518:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: orderedlist line 493 and section        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:658:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: section line 478 and article        /home/jsevans/Project/kubic-quickstart/lab/build/.adoc/Kubic-Project.xml:658:11:FATAL:PARSER:ERR_TAG_NOT_FINISHED: Premature end of data in tag article line 4.  Stop.
