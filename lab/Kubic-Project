@@ -14,7 +14,7 @@ ADOC_IMG_DIR="adoc/images"
 
 # Type
 #
-ADOC_TYPE="article"
+ADOC_TYPE="book"
 
 # Turn on postprocessing
 #
