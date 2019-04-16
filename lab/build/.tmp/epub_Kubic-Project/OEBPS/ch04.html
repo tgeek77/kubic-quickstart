@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 4. Section 4: Bootstrap the Cluster</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="_section_4_bootstrap_the_cluster"/>Chapter 4. Section 4: Bootstrap the Cluster</h1></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
+              <p class="lead">Description:</p>
+              <p>In this section you will bootstrap your Kubic Kubernetes cluster</p>
+            </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_1_set_up_kubic_master"/>Task 1: Set up Kubic-Master</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Login into the <span class="strong"><strong>Kubic-Master</strong></span> VM if you have not already done so:</p><p>
+            <span class="emphasis"><em>Userid:</em></span>
+            <span class="strong"><strong>root</strong></span>
+            
+            <span class="emphasis"><em>Password:</em></span>
+            <span class="strong"><strong>[your root password]</strong></span>
+          </p></li><li class="listitem"><p>Run the following command to configure this as a Kubernetes master
+node:</p><pre class="screen">kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</pre><p>You should see some output and at the end, you will see this:</p><p>You can now join any number of machines by running the following on each
+node as root:</p><pre class="screen">kubeadm join 10.0.2.11:6443 --token …*</pre><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>Save this command. You will need it later!</p></div></li></ol></div></div></div></body></html>

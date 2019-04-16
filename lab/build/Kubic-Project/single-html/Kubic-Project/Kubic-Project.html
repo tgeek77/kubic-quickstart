@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OpenSUSE Kubic</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets snapshot)" /><meta name="book-title" content="OpenSUSE Kubic" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="single offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><a href="https://github.com/openSUSE/daps"><img src="static/images/logo.png" alt="Logo" /></a></div><div class="crumbs inactive"><a class="single-crumb" href="#id-1" accesskey="c"><span class="single-contents-icon"></span>OpenSUSE Kubic</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#id-1" accesskey="c"><span class="single-contents-icon"></span>Show Contents: OpenSUSE Kubic</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#id-1.2"><span class="number"> </span><span class="name"></span></a></li><li class="inactive"><a href="#_section_1_setup_the_clone_master"><span class="number">1 </span><span class="name">Section 1: Setup the Clone Master</span></a></li><li class="inactive"><a href="#_section_2_clone_the_vms"><span class="number">2 </span><span class="name">Section 2: Clone the VMs</span></a></li><li class="inactive"><a href="#_section_3_configure_the_master_and_worker_vms"><span class="number">3 </span><span class="name">Section 3: Configure the Master and Worker VMs</span></a></li><li class="inactive"><a href="#_section_4_bootstrap_the_cluster"><span class="number">4 </span><span class="name">Section 4: Bootstrap the Cluster</span></a></li><li class="inactive"><a href="#_license"><span class="number">5 </span><span class="name">License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class=""><div class="documentation"><div xml:lang="en" class="book" id="id-1" lang="en"><div class="titlepage"><div><div><h1 class="title">OpenSUSE Kubic</h1></div><div><h2 class="subtitle">Installation</h2></div><div><span class="imprint-label">Author: </span><span class="firstname ">Jason</span> <span class="surname ">Evans</span></div><div class="date"><span class="imprint-label">Publication Date: </span>2019-04-10</div></div></div><div class="toc"><dl><dt><span class="preface"><a href="#id-1.2"><span class="name"></span></a></span></dt><dt><span class="chapter"><a href="#_section_1_setup_the_clone_master"><span class="number">1 </span><span class="name">Section 1: Setup the Clone Master</span></a></span></dt><dd><dl><dt><span class="section"><a href="#_task_1_download_the_installation_media"><span class="number">1.1 </span><span class="name">Task 1: Download the installation media</span></a></span></dt><dt><span class="section"><a href="#_task_2_set_up_nat_network"><span class="number">1.2 </span><span class="name">Task 2: Set up NAT Network</span></a></span></dt><dt><span class="section"><a href="#_task_3_set_up_a_new_vm"><span class="number">1.3 </span><span class="name">Task 3: Set up a new VM</span></a></span></dt><dt><span class="section"><a href="#_task_4_start_installation"><span class="number">1.4 </span><span class="name">Task 4: Start Installation</span></a></span></dt><dt><span class="section"><a href="#_task_5_post_installation_setup"><span class="number">1.5 </span><span class="name">Task 5: Post-Installation setup</span></a></span></dt></dl></dd><dt><span class="chapter"><a href="#_section_2_clone_the_vms"><span class="number">2 </span><span class="name">Section 2: Clone the VMs</span></a></span></dt><dd><dl><dt><span class="section"><a href="#_task_1_create_the_kubic_master_node"><span class="number">2.1 </span><span class="name">Task 1: Create the Kubic Master Node</span></a></span></dt><dt><span class="section"><a href="#_task_2_create_a_kubic_worker_node"><span class="number">2.2 </span><span class="name">Task 2: Create a Kubic Worker Node</span></a></span></dt></dl></dd><dt><span class="chapter"><a href="#_section_3_configure_the_master_and_worker_vms"><span class="number">3 </span><span class="name">Section 3: Configure the Master and Worker VMs</span></a></span></dt><dd><dl><dt><span class="section"><a href="#_task_1_configure_the_kubic_master_vm"><span class="number">3.1 </span><span class="name">Task 1: Configure the Kubic-Master VM</span></a></span></dt><dt><span class="section"><a href="#_task_2_configure_the_kubic_worker1_vm"><span class="number">3.2 </span><span class="name">Task 2: Configure the Kubic-Worker1 VM</span></a></span></dt></dl></dd><dt><span class="chapter"><a href="#_section_4_bootstrap_the_cluster"><span class="number">4 </span><span class="name">Section 4: Bootstrap the Cluster</span></a></span></dt><dd><dl><dt><span class="section"><a href="#_task_1_set_up_kubic_master"><span class="number">4.1 </span><span class="name">Task 1: Set up Kubic-Master</span></a></span></dt><dt><span class="section"><a href="#_task_2_optional_add_a_second_network_interface_to_kubic_master_vm"><span class="number">4.2 </span><span class="name">Task 2: (optional) Add a second network interface to Kubic-Master VM</span></a></span></dt><dt><span class="section"><a href="#_task_3_set_up_the_kubic_workers"><span class="number">4.3 </span><span class="name">Task 3: Set up the Kubic-Workers</span></a></span></dt><dt><span class="section"><a href="#_task_4_set_up_the_kubectl"><span class="number">4.4 </span><span class="name">Task 4: Set up the kubectl</span></a></span></dt><dt><span class="section"><a href="#_task_5_set_up_flannel"><span class="number">4.5 </span><span class="name">Task 5: Set up Flannel</span></a></span></dt></dl></dd><dt><span class="chapter"><a href="#_license"><span class="number">5 </span><span class="name">License</span></a></span></dt></dl></div>
+
+<div class="preface " id="id-1.2"><div class="titlepage"><div><div><h1 class="title"><span class="number"> </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"></span> <a title="Permalink" class="permalink" href="#id-1.2">#</a></h1></div></div></div><div class="line"></div>
+
+
+</div>
+<div class="chapter " id="_section_1_setup_the_clone_master"><div class="titlepage"><div><div><h1 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Section 1: Setup the Clone Master</span> <a title="Permalink" class="permalink" href="#_section_1_setup_the_clone_master">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="#_task_1_download_the_installation_media"><span class="number">1.1 </span><span class="name">Task 1: Download the installation media</span></a></span></dt><dt><span class="section"><a href="#_task_2_set_up_nat_network"><span class="number">1.2 </span><span class="name">Task 2: Set up NAT Network</span></a></span></dt><dt><span class="section"><a href="#_task_3_set_up_a_new_vm"><span class="number">1.3 </span><span class="name">Task 3: Set up a new VM</span></a></span></dt><dt><span class="section"><a href="#_task_4_start_installation"><span class="number">1.4 </span><span class="name">Task 4: Start Installation</span></a></span></dt><dt><span class="section"><a href="#_task_5_post_installation_setup"><span class="number">1.5 </span><span class="name">Task 5: Post-Installation setup</span></a></span></dt></dl></div></div>
+
+<div id="id-1.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+<p>This tutorial was written using Virtualbox 6.0. It contains step by step instructions for the installation process. However it is assumed that the user knows how to install and use Virtualbox on the operating system of their choice.</p>
+</div>
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p class="lead">Description:</p>
+<p>In this section you will set up a Kubic Clone Master which will make it easier to create new nodes.</p></td></tr></tbody></table>
+</div>
+<div class="sect1" id="_task_1_download_the_installation_media"><div class="titlepage"><div><div><h2 class="title" id="_task_1_download_the_installation_media"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 1: Download the installation media</span> <a title="Permalink" class="permalink" href="#_task_1_download_the_installation_media">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Go to the following url and download the current version of the Kubic url:   <a class="ulink" href="http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist" target="_blank">http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist<span class="ulink-url"> (http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist)</span></a></p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_2_set_up_nat_network"><div class="titlepage"><div><div><h2 class="title" id="_task_2_set_up_nat_network"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 2: Set up NAT Network</span> <a title="Permalink" class="permalink" href="#_task_2_set_up_nat_network">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Open VirtualBox and Click on File and then Preferences:</p>
+</li><li class="listitem ">
+<p>Click on the Network Icon</p>
+</li><li class="listitem ">
+<p>Click on the first icon on the right that Adds new NAT network</p>
+</li><li class="listitem ">
+<p>Click on the third icon on the right that Edits selected NAT network
+The Network CIDR should be:
+<code class="literal"><span class="strong"><strong><span class="green">10.0.2.0/24</span></strong></span></code>
+Leave the rest of the settings as their default values
+Click OK to close this screen</p>
+</li><li class="listitem ">
+<p>Click OK to close the preferences screen</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_3_set_up_a_new_vm"><div class="titlepage"><div><div><h2 class="title" id="_task_3_set_up_a_new_vm"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 3: Set up a new VM</span> <a title="Permalink" class="permalink" href="#_task_3_set_up_a_new_vm">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Open VirtualBox and Click on the New icon:</p>
+</li><li class="listitem ">
+<p>In the Name field, enter a name:
+<span class="strong"><strong><span class="gray">Kubic-CloneMaster</span></strong></span></p>
+</li><li class="listitem ">
+<p>In the Version field, choose <span class="strong"><strong>OpenSUSE 64-bit</strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Allow for <span class="strong"><strong>2048MB RAM</strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Choose <span class="strong"><strong>Create a virtual hard disk now</strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Choose <span class="strong"><strong>VDI (Virtual Disk Image)</strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Choose <span class="strong"><strong>Dynamically allocated</strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Allow for <span class="strong"><strong>30GB</strong></span>
+Click <span class="strong"><strong><span class="gray">Create</span></strong></span></p>
+</li><li class="listitem ">
+<p>Click on the Settings icon on the right</p>
+</li><li class="listitem ">
+<p>Go to the Network icon</p>
+</li><li class="listitem ">
+<p>Change Attached to</p>
+</li></ol></div>
+<p><span class="strong"><strong><span class="gray">NAT Network</span></strong></span>
+<span class="strong"><strong><span class="gray">Name:</span></strong></span> <span class="strong"><strong>NatNetwork</strong></span></p>
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Go to the System icon and click on the Processor tab</p>
+</li><li class="listitem ">
+<p>Change the number of processors to <span class="strong"><strong>2</strong></span></p>
+</li><li class="listitem ">
+<p>Click OK</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_4_start_installation"><div class="titlepage"><div><div><h2 class="title" id="_task_4_start_installation"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 4: Start Installation</span> <a title="Permalink" class="permalink" href="#_task_4_start_installation">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>On the main Virtualbox screen, choose <span class="strong"><strong>Kubic-CloneMaster</strong></span> and click on the Start icon
+You will be prompted to Select a start-up disk</p>
+</li><li class="listitem ">
+<p>Click on the folder icon:
+Choose the current iso file that you downloaded in Task 1</p>
+</li><li class="listitem ">
+<p>Click <span class="strong"><strong><span class="gray">start</span></strong></span></p>
+</li><li class="listitem ">
+<p>When the virtual machine boots, choose the installation option.</p>
+</li><li class="listitem ">
+<p>On the license screen, click next if you agree</p>
+</li><li class="listitem ">
+<p>Choose <span class="strong"><strong><span class="gray">kubeadm Node</span></strong></span>
+Click Next</p>
+</li><li class="listitem ">
+<p>Enter an NTP server local to you or use the default one that is provided
+Click Next</p>
+<div id="id-1.3.7.2.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+<p>Go to <a class="ulink" href="http://ntp.org" target="_blank">http://ntp.org<span class="ulink-url"> (http://ntp.org)</span></a> for more information.</p>
+</div>
+</li><li class="listitem ">
+<p>Enter a root password and then confirm it
+Click Next</p>
+</li><li class="listitem ">
+<p>Click <span class="strong"><strong><span class="gray">Install</span></strong></span></p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_5_post_installation_setup"><div class="titlepage"><div><div><h2 class="title" id="_task_5_post_installation_setup"><span class="number">1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 5: Post-Installation setup</span> <a title="Permalink" class="permalink" href="#_task_5_post_installation_setup">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>After the installation has finished, the VM will reboot. Choose <span class="strong"><strong>Boot from Hard Disk</strong></span></p>
+</li><li class="listitem ">
+<p>Choose the first option: <span class="strong"><strong>openSUSE Tumbleweed Kubic</strong></span></p>
+</li><li class="listitem ">
+<p>Log into the command line:</p>
+</li></ol></div>
+<p><span class="strong"><strong><span class="gray">Userid:</span></strong></span> <span class="strong"><strong>root</strong></span>
+<span class="strong"><strong><span class="gray">Password:</span></strong></span> <span class="strong"><strong>[your root password]</strong></span></p>
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Eject the installation media:
+<code class="literal"><span class="strong"><strong><span class="blue">eject /dev/sr0</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Install Yast for easier network configuration:
+<code class="literal"><span class="strong"><strong><span class="blue">transactional-update pkg install yast2-network</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Reboot your vm:
+<code class="literal"><span class="strong"><strong><span class="blue">reboot</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Repeat steps 1-3 in this task:</p>
+</li><li class="listitem ">
+<p>Start the curses version of yast to configure networking
+<code class="literal"><span class="strong"><strong><span class="blue">yast2 lan</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F4 key</strong></span> on your keyboard to edit:</p>
+<div id="id-1.3.8.4.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+<p>You can use the tab key to navigate the screen</p>
+</div>
+</li><li class="listitem ">
+<p>Click <span class="strong"><strong>alt t</strong></span> on your keyboard to change to Statically Assigned IP Address</p>
+</li><li class="listitem ">
+<p>In the IP Address field, enter:
+<code class="literal"><span class="strong"><strong><span class="green">10.0.2.10</span></strong></span></code>
+ Use the tab key to go to the next field</p>
+</li><li class="listitem ">
+<p>In the Subnet Mask field, enter:
+<code class="literal"><span class="strong"><strong><span class="green">/24</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10 key</strong></span> on your keyboard to go to the next screen</p>
+</li><li class="listitem ">
+<p>Click <span class="strong"><strong>alt s</strong></span> on your keyboard to change the Hostname/DNS</p>
+</li><li class="listitem ">
+<p>In the hostname field, enter: <span class="strong"><strong>clone-master</strong></span>
+Use the <span class="strong"><strong>tab key</strong></span> to go to the <span class="strong"><strong><span class="gray">Name Server 1</span></strong></span> field</p>
+</li><li class="listitem ">
+<p>Enter the generic Google DNS or substitute another if you prefer:
+<code class="literal"><span class="strong"><strong><span class="green">8.8.8.8</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Click <span class="strong"><strong>alt u</strong></span> on your keyboard to change the Routing</p>
+</li><li class="listitem ">
+<p>In the <span class="strong"><strong><span class="gray">Default IPv4 Gateway</span></strong></span> field, enter:
+<code class="literal"><span class="strong"><strong><span class="green">10.0.2.2</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Select click <span class="strong"><strong>alt i</strong></span> on your keyboard to select Enable IPv4 Forwarding</p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10 key</strong></span> to finish.</p>
+</li><li class="listitem ">
+<p>Ping the gateway. If you get a positive response, then you have set up the network correctly:
+<code class="literal"><span class="strong"><strong><span class="blue">ping 10.0.2.2</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
+<code class="literal"><span class="strong"><strong><span class="blue">ping opensuse.org</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>If either step 19 or 20 gives an error, review the steps in this task.</p>
+</li><li class="listitem ">
+<p>Shut down the VM:
+<code class="literal"><span class="strong"><strong><span class="blue">halt -p</span></strong></span></code></p>
+</li></ol></div>
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p>Description:
+In this section you set up a new Kubic VM which will be used as a template for creating further VMs.</p></td></tr></tbody></table>
+</div>
+
+</div>
+</div>
+<div class="chapter " id="_section_2_clone_the_vms"><div class="titlepage"><div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Section 2: Clone the VMs</span> <a title="Permalink" class="permalink" href="#_section_2_clone_the_vms">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="#_task_1_create_the_kubic_master_node"><span class="number">2.1 </span><span class="name">Task 1: Create the Kubic Master Node</span></a></span></dt><dt><span class="section"><a href="#_task_2_create_a_kubic_worker_node"><span class="number">2.2 </span><span class="name">Task 2: Create a Kubic Worker Node</span></a></span></dt></dl></div></div>
+
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p class="lead">Description:</p>
+<p>In this section you will create VMs for your Kubic cluster.</p></td></tr></tbody></table>
+</div>
+<div class="sect1" id="_task_1_create_the_kubic_master_node"><div class="titlepage"><div><div><h2 class="title" id="_task_1_create_the_kubic_master_node"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 1: Create the Kubic Master Node</span> <a title="Permalink" class="permalink" href="#_task_1_create_the_kubic_master_node">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Right-click on the <span class="strong"><strong><span class="gray">Kubic-CloneMaster</span></strong></span> VM and choose <span class="strong"><strong>Clone</strong></span></p>
+</li><li class="listitem ">
+<p>In the <span class="strong"><strong><span class="gray">Name</span></strong></span> field, enter:
+<span class="strong"><strong>Kubic-Master</strong></span></p>
+</li><li class="listitem ">
+<p>In the <span class="strong"><strong><span class="gray">Mac Address Policy</span></strong></span> field, choose:
+<span class="strong"><strong>Generate new MAC addresses for all network adapters</strong></span></p>
+</li><li class="listitem ">
+<p>On the <span class="strong"><strong><span class="gray">Clone type</span></strong></span> screen, choose <span class="strong"><strong>Linked Clone</strong></span>
+Click <span class="strong"><strong>Clone</strong></span></p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_2_create_a_kubic_worker_node"><div class="titlepage"><div><div><h2 class="title" id="_task_2_create_a_kubic_worker_node"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 2: Create a Kubic Worker Node</span> <a title="Permalink" class="permalink" href="#_task_2_create_a_kubic_worker_node">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Right-click on the <span class="strong"><strong><span class="gray">Kubic-CloneMaster</span></strong></span> VM and choose <span class="strong"><strong>Clone</strong></span></p>
+</li><li class="listitem ">
+<p>In the <span class="strong"><strong><span class="gray">Name</span></strong></span> field, enter:
+<span class="strong"><strong>Kubic-Worker1</strong></span></p>
+</li><li class="listitem ">
+<p>In the <span class="strong"><strong><span class="gray">Mac Address Policy</span></strong></span> field, choose:
+<span class="strong"><strong>Generate new MAC addresses for all network adapters</strong></span></p>
+</li><li class="listitem ">
+<p>On the <span class="strong"><strong><span class="gray">Clone type</span></strong></span> screen, choose <span class="strong"><strong>Linked Clone</strong></span>
+Click <span class="strong"><strong>Clone</strong></span></p>
+</li><li class="listitem ">
+<p>Repeat this task once more and create <span class="strong"><strong>Kubic_Worker2</strong></span>. You may
+repeat as many times as you like as long as you have memory and disk
+space for each node.</p>
+</li></ol></div>
+<div id="id-1.4.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+<p>The <span class="strong"><strong>Kubic-CloneMaster</strong></span> VM can be deleted at this point if you don’t think
+you will need more nodes or it can be left as a template. If it is
+deleted, it can always be recreated using the steps in the previous
+section.</p>
+</div>
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p>Summary:</p>
+<p>In this section you created additional VMs that will be used as Master
+and Worker nodes in an openUSE Kubic Kubernetes cluster.</p></td></tr></tbody></table>
+</div>
+
+</div>
+</div>
+<div class="chapter " id="_section_3_configure_the_master_and_worker_vms"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Section 3: Configure the Master and Worker VMs</span> <a title="Permalink" class="permalink" href="#_section_3_configure_the_master_and_worker_vms">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="#_task_1_configure_the_kubic_master_vm"><span class="number">3.1 </span><span class="name">Task 1: Configure the Kubic-Master VM</span></a></span></dt><dt><span class="section"><a href="#_task_2_configure_the_kubic_worker1_vm"><span class="number">3.2 </span><span class="name">Task 2: Configure the Kubic-Worker1 VM</span></a></span></dt></dl></div></div>
+
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p class="lead">Description:</p>
+<p>In this section, you will change the IP addresses on the Master and
+Worker VMs to be unique.</p></td></tr></tbody></table>
+</div>
+<div class="sect1" id="_task_1_configure_the_kubic_master_vm"><div class="titlepage"><div><div><h2 class="title" id="_task_1_configure_the_kubic_master_vm"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 1: Configure the Kubic-Master VM</span> <a title="Permalink" class="permalink" href="#_task_1_configure_the_kubic_master_vm">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Master</strong></span> VM and
+click on the down arrow next to the start icon. Click on Detachable
+Start</p>
+</li><li class="listitem ">
+<p>Log into the command line:</p>
+<p><span class="strong"><strong><span class="gray">Userid:</span></strong></span> <span class="strong"><strong>root</strong></span></p>
+<p><span class="strong"><strong><span class="gray">Password:</span></strong></span> <span class="strong"><strong>[your root password]</strong></span></p>
+</li><li class="listitem ">
+<p>Start the curses version of yast to configure networking</p>
+<p><code class="literal"><span class="strong"><strong><span class="blue">yast2 lan</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit</p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>tab</strong></span> key to navigate around the screen</p>
+</li><li class="listitem ">
+<p>Change the IP address to <code class="literal"><span class="strong"><strong><span class="green">10.0.2.11</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Change the Hostname to <span class="strong"><strong>kubic-master</strong></span></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10</strong></span> key to go the next screen</p>
+</li><li class="listitem ">
+<p>User the <span class="strong"><strong>alt s </strong></span>keys to go to the Hostname/DNS screen</p>
+</li><li class="listitem ">
+<p>Change the Hostname to <span class="strong"><strong>kubic-master</strong></span></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10</strong></span> key to finish:</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_2_configure_the_kubic_worker1_vm"><div class="titlepage"><div><div><h2 class="title" id="_task_2_configure_the_kubic_worker1_vm"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 2: Configure the Kubic-Worker1 VM</span> <a title="Permalink" class="permalink" href="#_task_2_configure_the_kubic_worker1_vm">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Worker1</strong></span> VM and
+click on the down arrow next to the start icon. Click on Detachable
+Start</p>
+</li><li class="listitem ">
+<p>Log into the command line:</p>
+<p><span class="strong"><strong><span class="gray">Userid:</span></strong></span> <span class="strong"><strong>root</strong></span></p>
+<p><span class="strong"><strong><span class="gray">Password:</span></strong></span> <span class="strong"><strong>[your root password]</strong></span></p>
+</li><li class="listitem ">
+<p>Start the curses version of yast to configure networking</p>
+<p><code class="literal"><span class="strong"><strong><span class="blue">yast2 lan</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit</p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>tab</strong></span> key to navigate around the screen</p>
+</li><li class="listitem ">
+<p>Change the IP address to <code class="literal"><span class="strong"><strong><span class="green">10.0.2.12</span></strong></span></code></p>
+</li><li class="listitem ">
+<p>Change the Hostname to <span class="strong"><strong>kubic-worker1</strong></span></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10</strong></span> key to go the next screen</p>
+</li><li class="listitem ">
+<p>User the <span class="strong"><strong>alt s </strong></span>keys to go to the Hostname/DNS screen</p>
+</li><li class="listitem ">
+<p>Change the Hostname to <span class="strong"><strong>kubic-worker1</strong></span></p>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F10</strong></span> key to finish</p>
+<p>Repeat Task 2 for each worker node. Add 1 to the IP address and hostname
+for each node that you configure using the pattern in this section.</p>
+<p>All nodes should be able to ping <code class="literal"><span class="strong"><strong><span class="green">10.0.2.2</span></strong></span></code>, each other, and an internet
+website.</p>
+</li></ol></div>
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p>Summary:</p>
+<p>In this section you changed the IP addresses on each node to be unique
+so they are ready to create a Kubernetes cluster</p></td></tr></tbody></table>
+</div>
+
+</div>
+</div>
+<div class="chapter " id="_section_4_bootstrap_the_cluster"><div class="titlepage"><div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Section 4: Bootstrap the Cluster</span> <a title="Permalink" class="permalink" href="#_section_4_bootstrap_the_cluster">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="#_task_1_set_up_kubic_master"><span class="number">4.1 </span><span class="name">Task 1: Set up Kubic-Master</span></a></span></dt><dt><span class="section"><a href="#_task_2_optional_add_a_second_network_interface_to_kubic_master_vm"><span class="number">4.2 </span><span class="name">Task 2: (optional) Add a second network interface to Kubic-Master VM</span></a></span></dt><dt><span class="section"><a href="#_task_3_set_up_the_kubic_workers"><span class="number">4.3 </span><span class="name">Task 3: Set up the Kubic-Workers</span></a></span></dt><dt><span class="section"><a href="#_task_4_set_up_the_kubectl"><span class="number">4.4 </span><span class="name">Task 4: Set up the kubectl</span></a></span></dt><dt><span class="section"><a href="#_task_5_set_up_flannel"><span class="number">4.5 </span><span class="name">Task 5: Set up Flannel</span></a></span></dt></dl></div></div>
+
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p class="lead">Description:</p>
+<p>In this section you will bootstrap your Kubic Kubernetes cluster</p></td></tr></tbody></table>
+</div>
+<div class="sect1" id="_task_1_set_up_kubic_master"><div class="titlepage"><div><div><h2 class="title" id="_task_1_set_up_kubic_master"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 1: Set up Kubic-Master</span> <a title="Permalink" class="permalink" href="#_task_1_set_up_kubic_master">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Login into the <span class="strong"><strong>Kubic-Master</strong></span> VM if you have not already done so:</p>
+<p><span class="emphasis"><em>Userid:</em></span> <span class="strong"><strong>root</strong></span>
+<span class="emphasis"><em>Password:</em></span> <span class="strong"><strong>[your root password]</strong></span></p>
+</li><li class="listitem ">
+<p>Run the following command to configure this as a Kubernetes master
+node:</p>
+<div class="verbatim-wrap"><pre class="screen">kubeadm init --cri-socket=/var/run/crio/crio.sock \
+--pod-network-cidr=10.244.0.0/16</pre></div>
+<p>You should see some output and at the end, you will see this:</p>
+<p>You can now join any number of machines by running the following on each
+node as root:</p>
+<div class="verbatim-wrap"><pre class="screen">kubeadm join 10.0.2.11:6443 --token …*</pre></div>
+<div id="id-1.6.3.2.2.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+<p>Save this command. You will need it later!</p>
+</div>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_2_optional_add_a_second_network_interface_to_kubic_master_vm"><div class="titlepage"><div><div><h2 class="title" id="_task_2_optional_add_a_second_network_interface_to_kubic_master_vm"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 2: (optional) Add a second network interface to Kubic-Master VM</span> <a title="Permalink" class="permalink" href="#_task_2_optional_add_a_second_network_interface_to_kubic_master_vm">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Power off the Kubic-Master VM</p>
+<div class="verbatim-wrap"><pre class="screen">halt -p</pre></div>
+</li><li class="listitem ">
+<p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Master VM</strong></span> and
+click on Settings</p>
+</li><li class="listitem ">
+<p>Click on the Network icon</p>
+</li><li class="listitem ">
+<p>Click on the Adaptor 2 tab</p>
+<p>Change Attached to to Bridged Adaptor</p>
+<p>Name should automatically change to whatever physical network adaptor
+you are using.</p>
+</li><li class="listitem ">
+<p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Master</strong></span> VM and
+click on the down arrow next to the start icon. Click on Detachable
+Start</p>
+</li><li class="listitem ">
+<p>Log into the command line:</p>
+<p>Userid: <span class="strong"><strong>root</strong></span></p>
+<p>Password: <span class="strong"><strong>[your root password]</strong></span></p>
+</li><li class="listitem ">
+<p>Start the curses version of yast to configure networking on the new
+nic</p>
+<div class="verbatim-wrap"><pre class="screen">yast2 lan</pre></div>
+</li><li class="listitem ">
+<p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit the new nic</p>
+</li><li class="listitem ">
+<p>Click on <span class="strong"><strong>alt y</strong></span> on your keyboard to change this nic to DHCP. If
+your network does not have DHCP, set a static IP instead.</p>
+</li><li class="listitem ">
+<p>Click on <span class="strong"><strong>F10</strong></span> on your keyboard to exit this screen</p>
+</li><li class="listitem ">
+<p>Click on <span class="strong"><strong>F10</strong></span> on your keyboard to exit yast</p>
+</li><li class="listitem ">
+<p>Find your new IP addresses</p>
+<div class="verbatim-wrap"><pre class="screen">ip a</pre></div>
+<p>You should now be able to log into the Kubic-Master using the terminal
+or application of your choice. You can also now copy and paste from this
+book.</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_3_set_up_the_kubic_workers"><div class="titlepage"><div><div><h2 class="title" id="_task_3_set_up_the_kubic_workers"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 3: Set up the Kubic-Workers</span> <a title="Permalink" class="permalink" href="#_task_3_set_up_the_kubic_workers">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Login to the Kubic-Worker1 VM if you have not already done so:</p>
+<p><span class="emphasis"><em>Userid:</em></span> <span class="strong"><strong>root</strong></span>
+<span class="emphasis"><em>Password:</em></span> <span class="strong"><strong>[your root password]</strong></span></p>
+</li><li class="listitem ">
+<p>Run the output command from Task 1 and add to the end of the command:</p>
+<div class="verbatim-wrap"><pre class="screen">--cri-socket=/var/run/crio/crio.sock</pre></div>
+</li><li class="listitem ">
+<p>Repeat this task for every worker VM</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_4_set_up_the_kubectl"><div class="titlepage"><div><div><h2 class="title" id="_task_4_set_up_the_kubectl"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 4: Set up the kubectl</span> <a title="Permalink" class="permalink" href="#_task_4_set_up_the_kubectl">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>On the <span class="strong"><strong>Kubic-Master</strong></span> VM, copy and set up the config file so that
+kubectl can interact with the cluster:</p>
+<div class="verbatim-wrap"><pre class="screen">mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config</pre></div>
+</li><li class="listitem ">
+<p>Check on your nodes</p>
+<div class="verbatim-wrap"><pre class="screen">kubectl get nodes</pre></div>
+<p>You should have 3 nodes. All of them should be in a NotReady status</p>
+</li></ol></div>
+</div>
+<div class="sect1" id="_task_5_set_up_flannel"><div class="titlepage"><div><div><h2 class="title" id="_task_5_set_up_flannel"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task 5: Set up Flannel</span> <a title="Permalink" class="permalink" href="#_task_5_set_up_flannel">#</a></h2></div></div></div>
+
+<div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+<p>Run the following command to install flannel on your cluster:</p>
+<div class="verbatim-wrap"><pre class="screen">kubectl apply -f https://0y.at/kubicflannel</pre></div>
+</li><li class="listitem ">
+<p>Check on your nodes</p>
+<div class="verbatim-wrap"><pre class="screen">watch kubectl get nodes</pre></div>
+<p>In 1-2 minutes all of them should be in a Ready status. Click on <span class="strong"><strong>Ctrl
+c</strong></span> on your keyboard to exit this screen.</p>
+<p>You now have a fully functional Kubernetes cluster! You can add more
+worker nodes at any time and then bootstrap them in like you did above.</p>
+</li></ol></div>
+<div class="informaltable">
+<table class="informaltable" border="1"><colgroup><col class="col_1" /></colgroup><tbody><tr><td align="left" valign="top"><p>Summary:</p>
+<p>In this section you completed your Kubic Kubernetes cluster. It is now
+fully functional and ready to be used.</p></td></tr></tbody></table>
+</div>
+
+</div>
+</div>
+<div class="chapter " id="_license"><div class="titlepage"><div><div><h1 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">License</span> <a title="Permalink" class="permalink" href="#_license">#</a></h1></div></div></div><div class="line"></div>
+
+<p>This work is licensed under a <a class="ulink" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License.<span class="ulink-url"> (https://creativecommons.org/licenses/by-sa/4.0/)</span></a></p>
+<p>You are free to:</p>
+<p><span class="strong"><strong>Share</strong></span> — copy and redistribute the material in any medium or format</p>
+<p><span class="strong"><strong>Adapt</strong></span> — remix, transform, and build upon the material for any purpose, even commercially.</p>
+<p>This license is acceptable for Free Cultural Works.</p>
+<p>The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:</p>
+<p><span class="strong"><strong>Attribution</strong></span> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p>
+<p><span class="strong"><strong>ShareAlike</strong></span> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</p>
+<p><span class="strong"><strong>No additional restrictions</strong></span> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</p>
+<p><span class="strong"><strong>Notices:</strong></span></p>
+<p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p>
+</div>
+</div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2019 
+        SUSE</p></div></div></body></html>
