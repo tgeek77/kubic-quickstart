@@ -1,6 +1,6 @@
 [reference]
 
-.The following typographical conventions are used in this manual:
+The following typographical conventions are used in this document:
 [width="100%",options="header"]
 |====================
 | Example | AsciiDoc Markup | Use
