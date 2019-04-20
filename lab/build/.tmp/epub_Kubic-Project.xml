@@ -26,6 +26,128 @@
       <?asciidoc-pagebreak?>
     </para>
   </preface>
+  <chapter xml:id="_documentation_conventions">
+    <title>Documentation Conventions</title>
+    <formalpara>
+      <title>Documentation Conventions</title>
+      <para>The following typographical conventions are used in this manual:</para>
+    </formalpara>
+    <informaltable frame="all" rowsep="1" colsep="1">
+      <tgroup cols="3">
+        <colspec colname="col_1" colwidth="33.3333*"/>
+        <colspec colname="col_2" colwidth="33.3333*"/>
+        <colspec colname="col_3" colwidth="33.3334*"/>
+        <tbody>
+          <row>
+            <entry align="left" valign="top">
+              <para>Example</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>AsciiDoc Markup</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Use</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>
+                <emphasis role="strong">Bold</emphasis>
+              </para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>**</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Represents things you should pay attention to or buttons you click, text or options that you should click/select/type in a GUI.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>
+                <emphasis role="strong">
+                  <emphasis>Bold Italics</emphasis>
+                </emphasis>
+              </para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>* __ *</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Represents the name of a Task or in the context of what is seen on the screen, the screen name, a tab name, column
+name, field name, etc.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>Option &gt; Option &gt; Option</para>
+            </entry>
+            <entry align="left" valign="top"/>
+            <entry align="left" valign="top">
+              <para>Represents a chain of items selected from a menu.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>
+                <emphasis role="strong">
+                  <emphasis>BOLD_UPPERCASE_ITALICS</emphasis>
+                </emphasis>
+              </para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>* _ ALL_CAPS _ *</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Represents an “exercise variable” that you replace with another value.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>
+                <emphasis role="strong">
+                  <literal>bold monospace</literal>
+                </emphasis>
+              </para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>` * * `</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Represents text displayed in a terminal or entered in a file.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>monospace</para>
+            </entry>
+            <entry align="left" valign="top"/>
+            <entry align="left" valign="top">
+              <para>Represents commands entered at the command line.</para>
+            </entry>
+          </row>
+          <row>
+            <entry align="left" valign="top">
+              <para>
+                <literal>
+                  <emphasis>Italics Monospace</emphasis>
+                </literal>
+              </para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>` _ _ `</para>
+            </entry>
+            <entry align="left" valign="top">
+              <para>Represents a file name.</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+    <para>
+      <?asciidoc-pagebreak?>
+    </para>
+  </chapter>
   <chapter xml:id="_section_1_setup_the_clone_master">
     <title>Section 1: Setup the Clone Master</title>
     <note>
@@ -548,13 +670,8 @@ so they are ready to create a Kubernetes cluster</para>
       <orderedlist numeration="arabic">
         <listitem>
           <para>Login into the <emphasis role="strong">Kubic-Master</emphasis> VM if you have not already done so:</para>
-          <para>
-            <emphasis>Userid:</emphasis>
-            <emphasis role="strong">root</emphasis>
-            <?asciidoc-br?>
-            <emphasis>Password:</emphasis>
-            <emphasis role="strong">[your root password]</emphasis>
-          </para>
+          <para><emphasis>Userid:</emphasis><emphasis role="strong">root</emphasis><?asciidoc-br?>
+ <?asciidoc-br?><emphasis>Password:</emphasis><emphasis role="strong">[your root password]</emphasis></para>
         </listitem>
         <listitem>
           <para>Run the following command to configure this as a Kubernetes master

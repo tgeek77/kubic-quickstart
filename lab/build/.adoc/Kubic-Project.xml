@@ -26,6 +26,66 @@
 <title></title>
 <simpara><?asciidoc-pagebreak?></simpara>
 </preface>
+<chapter xml:id="_documentation_conventions">
+<title>Documentation Conventions</title>
+<table frame="all" rowsep="1" colsep="1">
+<title>The following typographical conventions are used in this manual:</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="142*"/>
+<colspec colname="col_2" colwidth="142*"/>
+<colspec colname="col_3" colwidth="142*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Example</entry>
+<entry align="left" valign="top">AsciiDoc Markup</entry>
+<entry align="left" valign="top">Use</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Bold</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>**</simpara></entry>
+<entry align="left" valign="top"><simpara>Represents things you should pay attention to or buttons you click, text or options that you should click/select/type in a GUI.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong"><emphasis>Bold Italics</emphasis></emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>* __ *</simpara></entry>
+<entry align="left" valign="top"><simpara>Represents the name of a Task or in the context of what is seen on the screen, the screen name, a tab name, column
+name, field name, etc.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Option &gt; Option &gt; Option</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>Represents a chain of items selected from a menu.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong"><emphasis>BOLD_UPPERCASE_ITALICS</emphasis></emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>* _ ALL_CAPS _ *</simpara></entry>
+<entry align="left" valign="top"><simpara>Represents an “exercise variable” that you replace with another value.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong"><literal>bold monospace</literal></emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>` * * `</simpara></entry>
+<entry align="left" valign="top"><simpara>Represents text displayed in a terminal or entered in a file.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>monospace</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>Represents commands entered at the command line.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal><emphasis>Italics Monospace</emphasis></literal></simpara></entry>
+<entry align="left" valign="top"><simpara>` _ _ `</simpara></entry>
+<entry align="left" valign="top"><simpara>Represents a file name.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara><?asciidoc-pagebreak?></simpara>
+</chapter>
 <chapter xml:id="_section_1_setup_the_clone_master">
 <title>Section 1: Setup the Clone Master</title>
 <note>
@@ -497,6 +557,7 @@ so they are ready to create a Kubernetes cluster</simpara></entry>
 <listitem>
 <simpara>Login into the <emphasis role="strong">Kubic-Master</emphasis> VM if you have not already done so:</simpara>
 <simpara><emphasis>Userid:</emphasis> <emphasis role="strong">root</emphasis><?asciidoc-br?>
+&#160;<?asciidoc-br?>
 <emphasis>Password:</emphasis> <emphasis role="strong">[your root password]</emphasis></simpara>
 </listitem>
 <listitem>

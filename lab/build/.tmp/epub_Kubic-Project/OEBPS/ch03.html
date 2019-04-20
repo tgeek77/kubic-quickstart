@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 3. Section 3: Configure the Master and Worker VMs</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="_section_3_configure_the_master_and_worker_vms"/>Chapter 3. Section 3: Configure the Master and Worker VMs</h1></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 3. Section 2: Clone the VMs</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="_section_2_clone_the_vms"/>Chapter 3. Section 2: Clone the VMs</h1></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
               <p class="lead">Description:</p>
-              <p>In this section, you will change the IP addresses on the Master and
-Worker VMs to be unique.</p>
-            </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_1_configure_the_kubic_master_vm"/>Task 1: Configure the Kubic-Master VM</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Master</strong></span> VM and
-click on the down arrow next to the start icon. Click on Detachable
-Start</p></li><li class="listitem"><p>Log into the command line:</p><p>
-            <span class="strong"><strong>
-              <span class="gray">Userid:</span>
-            </strong></span>
-            <span class="strong"><strong>root</strong></span>
-          </p><p>
-            <span class="strong"><strong>
-              <span class="gray">Password:</span>
-            </strong></span>
-            <span class="strong"><strong>[your root password]</strong></span>
-          </p></li><li class="listitem"><p>Start the curses version of yast to configure networking</p><p>
-            <code class="literal">
-              <span class="strong"><strong>
-                <span class="blue">yast2 lan</span>
-              </strong></span>
-            </code>
-          </p></li><li class="listitem"><p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit</p></li><li class="listitem"><p>Use the <span class="strong"><strong>tab</strong></span> key to navigate around the screen</p></li><li class="listitem"><p>Change the IP address to <code class="literal"><span class="strong"><strong><span class="green">10.0.2.11</span></strong></span></code></p></li><li class="listitem"><p>Change the Hostname to <span class="strong"><strong>kubic-master</strong></span></p></li><li class="listitem"><p>Use the <span class="strong"><strong>F10</strong></span> key to go the next screen</p></li><li class="listitem"><p>User the <span class="strong"><strong>alt s </strong></span>keys to go to the Hostname/DNS screen</p></li><li class="listitem"><p>Change the Hostname to <span class="strong"><strong>kubic-master</strong></span></p></li><li class="listitem"><p>Use the <span class="strong"><strong>F10</strong></span> key to finish:</p></li></ol></div></div></div></body></html>
+              <p>In this section you will create VMs for your Kubic cluster.</p>
+            </td></tr></tbody></table></div><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_1_create_the_kubic_master_node"/>Task 1: Create the Kubic Master Node</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Right-click on the <span class="strong"><strong><span class="gray">Kubic-CloneMaster</span></strong></span> VM and choose <span class="strong"><strong>Clone</strong></span></p></li><li class="listitem"><p>In the <span class="strong"><strong><span class="gray">Name</span></strong></span> field, enter:<span class="strong"><strong>Kubic-Master</strong></span></p></li><li class="listitem"><p>In the <span class="strong"><strong><span class="gray">Mac Address Policy</span></strong></span> field, choose:<span class="strong"><strong>Generate new MAC addresses for all network adapters</strong></span></p></li><li class="listitem"><p>On the <span class="strong"><strong><span class="gray">Clone type</span></strong></span> screen, choose <span class="strong"><strong>Linked Clone</strong></span>
+Click <span class="strong"><strong>Clone</strong></span></p></li></ol></div></div></div></body></html>

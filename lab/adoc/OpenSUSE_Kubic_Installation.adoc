@@ -4,6 +4,9 @@ v1.0, 2019-04-10
 :toc:
 
 <<<
+== Documentation Conventions
+include::conventions.adoc[]
+<<<
 == Section 1: Setup the Clone Master
 [NOTE]
 =======================================================================

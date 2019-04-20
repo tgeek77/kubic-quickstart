@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Task 2: Configure the Kubic-Worker1 VM</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_2_configure_the_kubic_worker1_vm"/>Task 2: Configure the Kubic-Worker1 VM</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>From the main Virtualbox screen, choose the <span class="strong"><strong>Kubic-Worker1</strong></span> VM and
-click on the down arrow next to the start icon. Click on Detachable
-Start</p></li><li class="listitem"><p>Log into the command line:</p><p>
-            <span class="strong"><strong>
-              <span class="gray">Userid:</span>
-            </strong></span>
-            <span class="strong"><strong>root</strong></span>
-          </p><p>
-            <span class="strong"><strong>
-              <span class="gray">Password:</span>
-            </strong></span>
-            <span class="strong"><strong>[your root password]</strong></span>
-          </p></li><li class="listitem"><p>Start the curses version of yast to configure networking</p><p>
-            <code class="literal">
-              <span class="strong"><strong>
-                <span class="blue">yast2 lan</span>
-              </strong></span>
-            </code>
-          </p></li><li class="listitem"><p>Use the <span class="strong"><strong>F4</strong></span> key on your keyboard to edit</p></li><li class="listitem"><p>Use the <span class="strong"><strong>tab</strong></span> key to navigate around the screen</p></li><li class="listitem"><p>Change the IP address to <code class="literal"><span class="strong"><strong><span class="green">10.0.2.12</span></strong></span></code></p></li><li class="listitem"><p>Change the Hostname to <span class="strong"><strong>kubic-worker1</strong></span></p></li><li class="listitem"><p>Use the <span class="strong"><strong>F10</strong></span> key to go the next screen</p></li><li class="listitem"><p>User the <span class="strong"><strong>alt s </strong></span>keys to go to the Hostname/DNS screen</p></li><li class="listitem"><p>Change the Hostname to <span class="strong"><strong>kubic-worker1</strong></span></p></li><li class="listitem"><p>Use the <span class="strong"><strong>F10</strong></span> key to finish</p><p>Repeat Task 2 for each worker node. Add 1 to the IP address and hostname
-for each node that you configure using the pattern in this section.</p><p>All nodes should be able to ping <code class="literal"><span class="strong"><strong><span class="green">10.0.2.2</span></strong></span></code>, each other, and an internet
-website.</p></li></ol></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Task 2: Create a Kubic Worker Node</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_2_create_a_kubic_worker_node"/>Task 2: Create a Kubic Worker Node</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>Right-click on the <span class="strong"><strong><span class="gray">Kubic-CloneMaster</span></strong></span> VM and choose <span class="strong"><strong>Clone</strong></span></p></li><li class="listitem"><p>In the <span class="strong"><strong><span class="gray">Name</span></strong></span> field, enter:<span class="strong"><strong>Kubic-Worker1</strong></span></p></li><li class="listitem"><p>In the <span class="strong"><strong><span class="gray">Mac Address Policy</span></strong></span> field, choose:<span class="strong"><strong>Generate new MAC addresses for all network adapters</strong></span></p></li><li class="listitem"><p>On the <span class="strong"><strong><span class="gray">Clone type</span></strong></span> screen, choose <span class="strong"><strong>Linked Clone</strong></span>
+Click <span class="strong"><strong>Clone</strong></span></p></li><li class="listitem"><p>Repeat this task once more and create <span class="strong"><strong>Kubic_Worker2</strong></span>. You may
+repeat as many times as you like as long as you have memory and disk
+space for each node.</p></li></ol></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The <span class="strong"><strong>Kubic-CloneMaster</strong></span> VM can be deleted at this point if you don’t think
+you will need more nodes or it can be left as a template. If it is
+deleted, it can always be recreated using the steps in the previous
+section.</p></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col_1"/></colgroup><tbody><tr><td style="text-align: left" valign="top">
                 <p>Summary:</p>
-                <p>In this section you changed the IP addresses on each node to be unique
-so they are ready to create a Kubernetes cluster</p>
+                <p>In this section you created additional VMs that will be used as Master
+and Worker nodes in an openUSE Kubic Kubernetes cluster.</p>
               </td></tr></tbody></table></div><p>
         
       </p></div></body></html>
