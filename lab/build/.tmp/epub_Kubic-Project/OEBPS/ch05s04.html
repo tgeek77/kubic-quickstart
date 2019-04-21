@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Task 4: Set up the kubectl</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="section"><div class="titlepage"><div><div><h1 class="title"><a id="_task_4_set_up_the_kubectl"/>Task 4: Set up the kubectl</h1></div></div></div><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>On the <span class="strong"><strong>Kubic-Master</strong></span> VM, copy and set up the config file so that
-kubectl can interact with the cluster:</p><pre class="screen">mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config</pre></li><li class="listitem"><p>Check on your nodes</p><pre class="screen">kubectl get nodes</pre><p>You should have 3 nodes. All of them should be in a NotReady status</p></li></ol></div></div></body></html>
