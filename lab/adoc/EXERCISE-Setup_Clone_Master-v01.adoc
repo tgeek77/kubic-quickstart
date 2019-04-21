@@ -9,15 +9,15 @@ In this section you will set up a Kubic Clone Master which will make it easier t
 
 ==== Task 1: Download the installation media
 
-. Go to the following url and download the current version of the Kubic url:   http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist
+. Go to the following url and download the current version of the Kubic url: `_http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist_`
 
 ==== Task 2: Set up NAT Network
-. Open VirtualBox and Click on File and then Preferences:
+. Open VirtualBox and Click on *_File_* > *_Preferences_*:
 . Click on the Network Icon
 . Click on the first icon on the right that Adds new NAT network
 . Click on the third icon on the right that Edits selected NAT network
 The Network CIDR should be: +
-`[green]*10.0.2.0/24*` +
+`_10.0.2.0/24_` +
 Leave the rest of the settings as their default values +
 Click OK to close this screen
 . Click OK to close the preferences screen
@@ -25,7 +25,7 @@ Click OK to close this screen
 ==== Task 3: Set up a new VM
 . Open VirtualBox and Click on the New icon:
 . In the Name field, enter a name: +
-[gray]*Kubic-CloneMaster*
+*Kubic-CloneMaster*
 
 . In the Version field, choose *OpenSUSE 64-bit* +
 Click Next
@@ -43,16 +43,15 @@ Click Next
 Click Next
 
 . Allow for *30GB* +
-Click [gray]*Create*
+Click *_Create_*
 
 . Click on the Settings icon on the right
 
 . Go to the Network icon
 
-. Change Attached to
-
-[gray]*NAT Network* +
-[gray]*Name:* *NatNetwork*
+. Change Attached to +
+*_NAT Network_* +
+*_Name:_* *NatNetwork*
 
 . Go to the System icon and click on the Processor tab
 . Change the number of processors to *2*
@@ -64,41 +63,45 @@ You will be prompted to Select a start-up disk
 
 . Click on the folder icon: +
 Choose the current iso file that you downloaded in Task 1
-. Click [gray]*start*
+. Click *start*
 . When the virtual machine boots, choose the installation option.
 . On the license screen, click next if you agree
-. Choose [gray]*kubeadm Node* +
+. Choose *kubeadm Node* +
  Click Next
 . Enter an NTP server local to you or use the default one that is provided +
 Click Next
 [NOTE]
-Go to http://ntp.org for more information.
+Go to `_http://ntp.org_` for more information.
 
 . Enter a root password and then confirm it +
  Click Next
 
-. Click [gray]*Install*
+. Click *Install*
 
 ==== Task 5: Post-Installation setup
 . After the installation has finished, the VM will reboot. Choose *Boot from Hard Disk*
 . Choose the first option: *openSUSE Tumbleweed Kubic*
 . Log into the command line:
 
-[gray]*Userid:* *root* +
-[gray]*Password:* *[your root password]*
+*_Userid:_* *root* +
+*_Password:_* *[your root password]*
 
-. Eject the installation media: +
-`[blue]*eject /dev/sr0*`
+. Eject the installation media:
 
-. Install Yast for easier network configuration: +
-`[blue]*transactional-update pkg install yast2-network*`
+ eject /dev/sr0
 
-. Reboot your vm: +
-`[blue]*reboot*`
+. Install Yast for easier network configuration:
+
+ transactional-update pkg install yast2-network
+
+. Reboot your vm:
+
+ reboot
 
 . Repeat steps 1-3 in this task:
-. Start the curses version of yast to configure networking +
- `[blue]*yast2 lan*`
+. Start the curses version of yast to configure networking
+
+  yast2 lan
 
 . Use the *F4 key* on your keyboard to edit: +
 [NOTE]
@@ -106,11 +109,11 @@ You can use the tab key to navigate the screen
 
 . Click *alt t* on your keyboard to change to Statically Assigned IP Address
 . In the IP Address field, enter: +
-`[green]*10.0.2.10*` +
+`_10.0.2.10_` +
  Use the tab key to go to the next field
 
 . In the Subnet Mask field, enter: +
-`[green]*/24*`
+`_/24_`
 
 . Use the *F10 key* on your keyboard to go to the next screen
 . Click *alt s* on your keyboard to change the Hostname/DNS
@@ -118,23 +121,26 @@ You can use the tab key to navigate the screen
 Use the *tab key* to go to the [gray]*Name Server 1* field
 
 . Enter the generic Google DNS or substitute another if you prefer: +
-`[green]*8.8.8.8*`
+`_8.8.8.8_`
 
 . Click *alt u* on your keyboard to change the Routing
 . In the [gray]*Default IPv4 Gateway* field, enter: +
-`[green]*10.0.2.2*`
+`_10.0.2.2_`
 
 . Select click *alt i* on your keyboard to select Enable IPv4 Forwarding
 . Use the *F10 key* to finish.
-. Ping the gateway. If you get a positive response, then you have set up the network correctly: +
-`[blue]*ping 10.0.2.2*`
+. Ping the gateway. If you get a positive response, then you have set up the network correctly:
 
-. Ping an internet website.  If you get a positive response, then you have set up the DNS correctly: +
-`[blue]*ping opensuse.org*`
+ ping 10.0.2.2
+
+. Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
+
+ ping opensuse.org
 
 .  If either step 19 or 20 gives an error, review the steps in this task.
-. Shut down the VM: +
-`[blue]*halt -p*`
+. Shut down the VM:
+
+ halt -p
 
 [cols="",]
 |=======================================================================

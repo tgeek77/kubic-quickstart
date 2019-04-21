@@ -11,19 +11,16 @@ In this section you will bootstrap your Kubic Kubernetes cluster
 
 . Login into the *Kubic-Master* VM if you have not already done so:
 +
-_Userid:_ *root* +
-{nbsp} +
-_Password:_ *[your root password]*
-. Run the following command to configure this as a Kubernetes master
-node:
+*_Userid:_* *root* +
+*_Password:_* *[your root password]*
+. Run the following command to configure this as a Kubernetes master node:
 +
  kubeadm init --cri-socket=/var/run/crio/crio.sock \
  --pod-network-cidr=10.244.0.0/16
 +
 You should see some output and at the end, you will see this:
 +
-You can now join any number of machines by running the following on each
-node as root:
+You can now join any number of machines by running the following on each node as root:
 +
  kubeadm join 10.0.2.11:6443 --token …*
 +
@@ -36,7 +33,7 @@ Save this command. You will need it later!
 +
  halt -p
 +
-. From the main Virtualbox screen, choose the *Kubic-Master VM* and
+. From the main Virtualbox screen, choose the *_Kubic-Master VM_* and
 click on Settings
 . Click on the Network icon
 . Click on the Adaptor 2 tab
@@ -45,38 +42,32 @@ Change Attached to to Bridged Adaptor
 +
 Name should automatically change to whatever physical network adaptor
 you are using.
-. From the main Virtualbox screen, choose the *Kubic-Master* VM and
-click on the down arrow next to the start icon. Click on Detachable
-Start
+. From the main Virtualbox screen, choose the *_Kubic-Master_* VM and click on the down arrow next to the start icon.
+. Click on Detachable Start
 . Log into the command line:
 +
-Userid: *root*
-+
-Password: *[your root password]*
-. Start the curses version of yast to configure networking on the new
-nic
+*_Userid_*: *root* +
+*_Password_*: *[your root password]*
+. Start the curses version of yast to configure networking on the new nic
 +
  yast2 lan
 
 . Use the *F4* key on your keyboard to edit the new nic
-. Click on *alt y* on your keyboard to change this nic to DHCP. If
-your network does not have DHCP, set a static IP instead.
+. Click on *alt y* on your keyboard to change this nic to DHCP. If your network does not have DHCP, set a static IP instead.
 . Click on *F10* on your keyboard to exit this screen
 . Click on *F10* on your keyboard to exit yast
 . Find your new IP addresses
 +
  ip a
 +
-You should now be able to log into the Kubic-Master using the terminal
-or application of your choice. You can also now copy and paste from this
-book.
+You should now be able to log into the Kubic-Master using the terminal or application of your choice. You can also now copy and paste from this book.
 
 ==== Task 3: Set up the Kubic-Workers
 
 . Login to the Kubic-Worker1 VM if you have not already done so:
 +
-_Userid:_ *root* +
-_Password:_ *[your root password]*
+*_Userid:_* *root* +
+*_Password:_* *[your root password]*
 . Run the output command from Task 1 and add to the end of the command:
 +
  --cri-socket=/var/run/crio/crio.sock
@@ -85,8 +76,7 @@ _Password:_ *[your root password]*
 
 ==== Task 4: Set up the kubectl
 
-. On the *Kubic-Master* VM, copy and set up the config file so that
-kubectl can interact with the cluster:
+. On the *_Kubic-Master_* VM, copy and set up the config file so that kubectl can interact with the cluster:
 +
  mkdir -p $HOME/.kube
  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -96,7 +86,7 @@ kubectl can interact with the cluster:
 +
  kubectl get nodes
 +
-You should have 3 nodes. All of them should be in a NotReady status
+You should have 3 nodes. All of them should be in a *_NotReady_* status
 
 ==== Task 5: Set up Flannel
 
@@ -112,15 +102,13 @@ In 1-2 minutes all of them should be in a Ready status. Click on *Ctrl
 c* on your keyboard to exit this screen.
 +
 
-You now have a fully functional Kubernetes cluster! You can add more
-worker nodes at any time and then bootstrap them in like you did above.
+You now have a fully functional Kubernetes cluster! You can add more worker nodes at any time and then bootstrap them in like you did above.
 
 [cols="",]
 |=======================================================================
 a|
 Summary:
 
-In this section you completed your Kubic Kubernetes cluster. It is now
-fully functional and ready to be used.
+In this section you completed your Kubic Kubernetes cluster. It is now fully functional and ready to be used.
 
 |=======================================================================

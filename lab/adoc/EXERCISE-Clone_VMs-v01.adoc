@@ -10,29 +10,29 @@ In this section you will create VMs for your Kubic cluster.
 
 ==== Task 1: Create the Kubic Master Node
 
-. Right-click on the [gray]*Kubic-CloneMaster* VM and choose *Clone*
-. In the [gray]*Name* field, enter: +
+. Right-click on the *_Kubic-CloneMaster_* VM and choose *Clone*
+. In the *_Name_* field, enter: +
 *Kubic-Master*
-. In the [gray]*Mac Address Policy* field, choose: +
+. In the *_Mac Address Policy_* field, choose: +
 *Generate new MAC addresses for all network adapters*
-. On the [gray]*Clone type* screen, choose *Linked Clone* +
+. On the *_Clone type_* screen, choose *Linked Clone* +
 Click *Clone*
 
 ==== Task 2: Create a Kubic Worker Node
 
-. Right-click on the [gray]*Kubic-CloneMaster* VM and choose *Clone*
-. In the [gray]*Name* field, enter: +
+. Right-click on the *_Kubic-CloneMaster_* VM and choose *Clone*
+. In the *_Name_* field, enter: +
 *Kubic-Worker1*
-. In the [gray]*Mac Address Policy* field, choose: +
+. In the *_Mac Address Policy_* field, choose: +
 *Generate new MAC addresses for all network adapters*
-. On the [gray]*Clone type* screen, choose *Linked Clone* +
+. On the *_Clone type_* screen, choose *Linked Clone* +
 Click *Clone*
 . Repeat this task once more and create *Kubic_Worker2*. You may
 repeat as many times as you like as long as you have memory and disk
 space for each node.
 
 [NOTE]
-The *Kubic-CloneMaster* VM can be deleted at this point if you don’t think
+The *_Kubic-CloneMaster_* VM can be deleted at this point if you don’t think
 you will need more nodes or it can be left as a template. If it is
 deleted, it can always be recreated using the steps in the previous
 section.
