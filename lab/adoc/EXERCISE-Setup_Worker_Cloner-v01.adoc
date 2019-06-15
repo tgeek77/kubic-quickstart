@@ -9,7 +9,7 @@ In this section you will set up a Kubic Clone Master which will make it easier t
 
 ==== Task 1: Download the installation media
 
-. Go to the following url and download the current version of the Kubic url: `_http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist_`
+. Go to the following url and download the current version of the Kubic url: `_http://download.opensuse.org/tumbleweed/iso/openSUSE-Kubic-DVD-x86_64-Current.iso_`
 
 ==== Task 2: Set up NAT Network
 . Open VirtualBox and Click on *_File_* > *_Preferences_*:
@@ -23,9 +23,9 @@ Click OK to close this screen
 . Click OK to close the preferences screen
 
 ==== Task 3: Set up a new VM
-. Open VirtualBox and Click on the New icon:
+. Open VirtualBox and Click on the *_New_* icon:
 . In the Name field, enter a name: +
-*Kubic-CloneMaster*
+*Kubic-Cloner*
 
 . In the Version field, choose *OpenSUSE 64-bit* +
 Click Next
@@ -58,7 +58,7 @@ Click *_Create_*
 . Click OK
 
 ==== Task 4: Start Installation
-. On the main Virtualbox screen, choose *Kubic-CloneMaster* and click on the Start icon +
+. On the main Virtualbox screen, choose *Kubic-Cloner* and click on the Start icon +
 You will be prompted to Select a start-up disk
 
 . Click on the folder icon: +
@@ -66,7 +66,7 @@ Choose the current iso file that you downloaded in Task 1
 . Click *start*
 . When the virtual machine boots, choose the installation option.
 . On the license screen, click next if you agree
-. Choose *kubeadm Node* +
+. Choose *Kubic Worker Node (Alpha)* +
  Click Next
 . Enter an NTP server local to you or use the default one that is provided +
 Click Next
@@ -75,7 +75,28 @@ Go to `_http://ntp.org_` for more information.
 
 . Enter a root password and then confirm it +
  Click Next
+. Click *_Network Configuration_*
+. Click *_Edit_*
+. Click *_Statically Assigned IP Address_*
+. In the IP Address field, enter: +
+`_10.0.2.11_` +
+ Use the tab key to go to the next field
 
+. In the Subnet Mask field, enter: +
+`_/24_`
+
+. Click *_Next_*
+. Click *_Hostname/DNS_*, enter: +
+`_worker0_` +
+. Click on the *_Name Server 1_* field, enter the generic Google DNS or substitute another if you prefer: +
+`_8.8.8.8_`
+
+. Click *alt u* on your keyboard to change the Routing
+. In the [gray]*Default IPv4 Gateway* field, enter: +
+`_10.0.2.2_`
+
+. Select click *alt i* on your keyboard to select Enable IPv4 Forwarding
+. Use the *F10 key* to finish.
 . Click *Install*
 
 ==== Task 5: Post-Installation setup
@@ -107,28 +128,7 @@ Go to `_http://ntp.org_` for more information.
 [NOTE]
 You can use the tab key to navigate the screen
 
-. Click *alt t* on your keyboard to change to Statically Assigned IP Address
-. In the IP Address field, enter: +
-`_10.0.2.10_` +
- Use the tab key to go to the next field
 
-. In the Subnet Mask field, enter: +
-`_/24_`
-
-. Use the *F10 key* on your keyboard to go to the next screen
-. Click *alt s* on your keyboard to change the Hostname/DNS
-. In the hostname field, enter: *clone-master* +
-Use the *tab key* to go to the [gray]*Name Server 1* field
-
-. Enter the generic Google DNS or substitute another if you prefer: +
-`_8.8.8.8_`
-
-. Click *alt u* on your keyboard to change the Routing
-. In the [gray]*Default IPv4 Gateway* field, enter: +
-`_10.0.2.2_`
-
-. Select click *alt i* on your keyboard to select Enable IPv4 Forwarding
-. Use the *F10 key* to finish.
 . Ping the gateway. If you get a positive response, then you have set up the network correctly:
 
  ping 10.0.2.2
