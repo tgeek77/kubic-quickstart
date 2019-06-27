@@ -1,6 +1,6 @@
-= OpenSUSE Kubic: Installation
+= OpenSUSE Kubic: Installation Tutorial
 Jason Evans <jsevans@opensuse.org>
-v1.1, 2019-April-21
+v2.0, 2019-July-15
 :toc:
 
 <<<
