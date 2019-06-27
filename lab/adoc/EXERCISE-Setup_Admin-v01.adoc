@@ -25,7 +25,7 @@ Click OK to close this screen
 ==== Task 3: Set up a new VM
 . Open VirtualBox and Click on the *_New_* icon:
 . In the *_Name_* field, enter a name: +
-*Kubic-Admin*
+`_Kubic-Admin_`
 
 . In the *_Version_* field, choose *OpenSUSE 64-bit* +
 Click Next
@@ -43,17 +43,17 @@ Click Next
 Click Next
 
 . Allow for *30GB* +
-Click *_Create_*
+Click *Create*
 
-. Click on the Settings icon on the right
+. Click on the *Settings* icon on the right
 
-. Go to the Network icon
+. Go to the *Network* icon
 
 . Change Attached to +
 *_NAT Network_* +
 *_Name:_* *NatNetwork*
 
-. Go to the System icon and click on the Processor tab
+. Go to the *System* icon and click on the *Processor* tab
 . Change the number of processors to *2*
 . Click OK
 
@@ -80,20 +80,27 @@ Go to `_http://ntp.org_` for more information.
 . Click *Edit*
 . Click on *_Statically Assigned IP Address_*
 . In the *_IP Address_* field, enter: +
-*10.0.2.10*
+`_10.0.2.10_` +
 . In the *_Subnet Mask_* field, enter: +
-*/24*
+`_/24_`
 . Click Next
 . Click on the *_Hostname/DNS_* tab
 . In the *_Hostname_* field, enter: +
- *Kubic_Admin*
-
-
+`_Kubic-Admin_`
+. In the *_Name Server 1_* field, enter the generic Google DNS or substitute another if you prefer: +
+`_8.8.8.8_`
+. Click on the *_Routing_* tab
+. Choose *_Enable IPv4 Forwarding_*
+. Click *Add*
+. In the *_Gateway_* field, enter: +
+`_10.0.2.2_`
+. Click OK
+. Click Next
 . Click *Install*
 
 ==== Task 6: Post-Installation setup
 . After the installation has finished, the VM will reboot. Choose *Boot from Hard Disk*
-. Choose the first option: *openSUSE Tumbleweed Kubic*
+. Choose the first option: *openSUSE MicroOS*
 . Log into the command line:
 
 *_Userid:_* *root* +
@@ -103,45 +110,6 @@ Go to `_http://ntp.org_` for more information.
 
  eject /dev/sr0
 
-. Install Yast for easier network configuration:
-
- transactional-update pkg install yast2-network
-
-. Reboot your vm:
-
- reboot
-
-. Repeat steps 1-3 in this task:
-. Start the curses version of yast to configure networking
-
-  yast2 lan
-
-. Use the *F4 key* on your keyboard to edit: +
-[NOTE]
-You can use the tab key to navigate the screen
-
-. Click *alt t* on your keyboard to change to Statically Assigned IP Address
-. In the IP Address field, enter: +
-`_10.0.2.10_` +
- Use the tab key to go to the next field
-
-. In the Subnet Mask field, enter: +
-`_/24_`
-
-. Use the *F10 key* on your keyboard to go to the next screen
-. Click *alt s* on your keyboard to change the Hostname/DNS
-. In the hostname field, enter: *clone-master* +
-Use the *tab key* to go to the [gray]*Name Server 1* field
-
-. Enter the generic Google DNS or substitute another if you prefer: +
-`_8.8.8.8_`
-
-. Click *alt u* on your keyboard to change the Routing
-. In the [gray]*Default IPv4 Gateway* field, enter: +
-`_10.0.2.2_`
-
-. Select click *alt i* on your keyboard to select Enable IPv4 Forwarding
-. Use the *F10 key* to finish.
 . Ping the gateway. If you get a positive response, then you have set up the network correctly:
 
  ping 10.0.2.2
@@ -149,11 +117,6 @@ Use the *tab key* to go to the [gray]*Name Server 1* field
 . Ping an internet website.  If you get a positive response, then you have set up the DNS correctly:
 
  ping opensuse.org
-
-.  If either step 19 or 20 gives an error, review the steps in this task.
-. Shut down the VM:
-
- halt -p
 
 [cols="",]
 |=======================================================================
