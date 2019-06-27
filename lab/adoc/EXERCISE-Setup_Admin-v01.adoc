@@ -13,9 +13,9 @@ In this section you will set up a Kubic Clone Master which will make it easier t
 
 ==== Task 2: Set up NAT Network
 . Open VirtualBox and Click on menu:File[Preferences]:
-. Click on the Network Icon
-. Click on the first icon on the right that Adds new NAT network
-. Click on the third icon on the right that Edits selected NAT network
+. Click on the *_Network_* Icon
+. Click on the first icon on the right that *_Adds_* new NAT network
+. Click on the third icon on the right that *_Edits_* selected NAT network
 The Network CIDR should be: +
 `_10.0.2.0/24_` +
 Leave the rest of the settings as their default values +
@@ -23,11 +23,11 @@ Click OK to close this screen
 . Click OK to close the preferences screen
 
 ==== Task 3: Set up a new VM
-. Open VirtualBox and Click on the New icon:
-. In the Name field, enter a name: +
-*Kubic-CloneMaster*
+. Open VirtualBox and Click on the *_New_* icon:
+. In the *_Name_* field, enter a name: +
+*Kubic-Admin*
 
-. In the Version field, choose *OpenSUSE 64-bit* +
+. In the *_Version_* field, choose *OpenSUSE 64-bit* +
 Click Next
 
 . Allow for *2048MB RAM* +
@@ -58,15 +58,14 @@ Click *_Create_*
 . Click OK
 
 ==== Task 4: Start Installation
-. On the main Virtualbox screen, choose *Kubic-CloneMaster* and click on the Start icon +
+. On the main Virtualbox screen, choose *Kubic-Admin* and click on the *_Start_* icon +
 You will be prompted to Select a start-up disk
-
 . Click on the folder icon: +
 Choose the current iso file that you downloaded in Task 1
 . Click *start*
 . When the virtual machine boots, choose the installation option.
 . On the license screen, click next if you agree
-. Choose *kubeadm Node* +
+. Choose *_Kubic Admin Node (Alpha)_* +
  Click Next
 . Enter an NTP server local to you or use the default one that is provided +
 Click Next
@@ -76,9 +75,23 @@ Go to `_http://ntp.org_` for more information.
 . Enter a root password and then confirm it +
  Click Next
 
+==== Task 5: Network Configuration and Installation
+. Click on *_Network Configuration_*
+. Click *Edit*
+. Click on *_Statically Assigned IP Address_*
+. In the *_IP Address_* field, enter: +
+*10.0.2.10*
+. In the *_Subnet Mask_* field, enter: +
+*/24*
+. Click Next
+. Click on the *_Hostname/DNS_* tab
+. In the *_Hostname_* field, enter: +
+ *Kubic_Admin*
+
+
 . Click *Install*
 
-==== Task 5: Post-Installation setup
+==== Task 6: Post-Installation setup
 . After the installation has finished, the VM will reboot. Choose *Boot from Hard Disk*
 . Choose the first option: *openSUSE Tumbleweed Kubic*
 . Log into the command line:

@@ -18,7 +18,7 @@ include::EXERCISE-Setup_Admin-v01.adoc[]
 <<<
 
 == Section 2: Setup the Worker Template VM
-include::EXERCISE-Setup_Worker_Cloner-v01.adoc[]
+include::EXERCISE-Setup_Worker_Template-v01.adoc[]
 <<<
 
 == Section 3: Clone the VMs
