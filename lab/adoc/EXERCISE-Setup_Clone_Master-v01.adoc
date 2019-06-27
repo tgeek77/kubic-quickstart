@@ -12,7 +12,7 @@ In this section you will set up a Kubic Clone Master which will make it easier t
 . Go to the following url and download the current version of the Kubic url: `_http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Kubic-DVD-x86_64-Current.iso.mirrorlist_`
 
 ==== Task 2: Set up NAT Network
-. Open VirtualBox and Click on *_File_* > *_Preferences_*:
+. Open VirtualBox and Click on menu:File[Preferences]:
 . Click on the Network Icon
 . Click on the first icon on the right that Adds new NAT network
 . Click on the third icon on the right that Edits selected NAT network
